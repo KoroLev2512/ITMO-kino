@@ -9,14 +9,25 @@
 
 .backBtn {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-right: auto;
   color: var(--light);
-  background: var(--secondary);
+  background: none;
   padding: 8px 20px;
   border-radius: 4px;
 }
 
 .title {
+  display: flex;
+  align-items: center;
+  color: #FFF;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: "Muller Next Wide Trial ExtraBold", serif;
+  font-size: 42.057px;
+  font-style: normal;
+  font-weight: 750;
+  line-height: normal;
+  margin-top: var(--margin);
   padding-right: calc(var(--firstColWidth) + var(--margin));
 }
