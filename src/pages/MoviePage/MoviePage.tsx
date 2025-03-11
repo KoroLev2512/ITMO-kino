@@ -17,9 +17,6 @@ export const MoviePage = () => {
     const navigate = useNavigate();
     const {isLoading, data} = useGetMovieByIdQuery(params.id!)
 
-    const slides = document.querySelectorAll('.swiper-slide');
-    const swiperWrapper = document.querySelector('.swiper-wrapper');
-
     const renderSessionTimes = (sessions: Session[]) => {
         if (!data) return null
         return sessions.map(({id, time}) => {

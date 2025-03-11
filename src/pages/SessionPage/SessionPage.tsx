@@ -30,6 +30,7 @@ export const SessionPage = () => {
     const seatsCount = order.seats.length
     const totalPrice = price * seatsCount
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const getOrderInfo = (order: OrderState) => {
         return order.seats.map(({row, seat}, i) => ({
             label: `Билет ${i + 1}`,
@@ -61,6 +62,7 @@ export const SessionPage = () => {
 
     if (isLoading) return <Title center>Загрузка свободных мест...</Title>
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const getSessionInfo = (movie: string, time: string) => {
         return [
             {
@@ -78,6 +80,7 @@ export const SessionPage = () => {
         dispatch(clearOrder())
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const getPriceInfo = (count: number, price: number) => {
         return [
             {
@@ -132,12 +135,11 @@ export const SessionPage = () => {
                                 onClick={onClick}
                             >
                                 <div className={style.accept}>
-
+                                    готово
                                 </div>
                             </div>}
                         </div>}
-                        {!seatsCount && <h3 className={classNames(style.title, style.titleCenter)}></h3>}
-                        {qrCode && <div className={style.qr}>
+                        <h3 className={classNames(style.title, style.titleCenter)}>No seats selected</h3>                        {qrCode && <div className={style.qr}>
                             <img ref={imgRef} src="" alt="QR Code"/>
                         </div>}
                     </div>
