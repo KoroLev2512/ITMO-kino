@@ -1,0 +1,72 @@
+.bg {
+  min-height: 100dvh;
+  background-image: url("../../../public/images/background.png");
+  background-position: center 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1720px;
+  margin: 0 auto;
+  min-height: 100dvh;
+  background-image: url("../../../public/images/chairs-bg-orange.png");
+  background-position: center 82dvh;
+  background-repeat: no-repeat;
+  padding-top: calc(var(--margin) * 4);
+}
+
+.backButton {
+  position: absolute;
+  left: 0;
+  display: flex;
+  color: var(--white-color);
+  border: none;
+  padding-top: 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: initial;
+  gap: 10px;
+  margin-left: 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  max-width: 1200px;
+  width: 100%;
+  margin-left: calc(var(--margin) * 4);
+}
+
+.title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  max-width: 1200px;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: "Muller Next Wide Trial ExtraBold", serif;
+  font-size: 45px;
+  font-style: normal;
+  font-weight: 750;
+  line-height: normal;
+  text-align: start;
+  color: var(--white-color);
+  padding-right: calc(var(--firstColWidth) + var(--margin));
+  padding-top: 10px;
+}
+
+.description {
+  color: #FFF;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: "Muller", serif;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: var(--margin);
+}

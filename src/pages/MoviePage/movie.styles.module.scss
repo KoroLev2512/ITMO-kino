@@ -1,0 +1,232 @@
+.bg {
+  min-height: 100dvh;
+  background-image: url("../../../public/images/background.png");
+  background-position: center 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1720px;
+  margin: 0 auto;
+  min-height: 100dvh;
+  background-image: url("../../../public/images/chairs-bg-orange.png");
+  background-position: center 82dvh;
+  background-repeat: no-repeat;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  margin-top: calc(var(--margin) * 4);
+  justify-items: center;
+  max-width: 1200px;
+  width: 100%;
+  margin-left: calc(var(--margin) * 4);
+}
+
+//.content {
+//  display: grid;
+//  grid-template-columns: 3fr 2fr;
+//  gap: calc(var(--margin) * 2);
+//}
+
+.date {
+  display: flex;
+  flex-direction: column;
+  margin-top: var(--margin);
+}
+
+.date_title {
+  color: #FFD3AA;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: "Muller Next Wide Trial ExtraBold", serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 750;
+  line-height: normal;
+}
+
+.date_value {
+  color: #939393;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: "Muller Next Wide Trial ExtraBold", serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 750;
+  line-height: normal;
+}
+
+.session {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: calc(var(--margin) / 2);
+}
+
+.sessionTimesList {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--margin);
+  flex-direction: row;
+  margin-left: var(--margin);
+  margin-top: var(--margin);
+}
+
+.image {
+  width: 100%;
+  margin-bottom: var(--margin);
+  overflow: hidden;
+  border-radius: 20px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    aspect-ratio: 16/9;
+  }
+}
+
+.leftColumn {
+  margin-left: var(--margin);
+}
+
+.rightColumn {
+  display: grid;
+  gap: calc(var(--margin) * 2);
+  align-content: flex-start;
+}
+
+.subtitle {
+  font-size: 20px;
+  text-align: center;
+  color: var(--white-color);
+}
+
+.error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.errorText {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 1000;
+  display: flex;
+  font-size: 28px;
+  color: black;
+  padding-right: calc(var(--firstColWidth) + var(--margin));
+}
+
+.errorButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white-color);
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: var(--gray-color);
+
+  &:hover {
+    background-color: var(--brand-blue-color);
+  }
+}
+
+.title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  max-width: 1200px;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: "Muller Next Wide Trial ExtraBold", serif;
+  font-size: 45px;
+  font-style: normal;
+  font-weight: 750;
+  line-height: normal;
+  text-align: flex-start;
+  color: var(--white-color);
+  padding-right: calc(var(--firstColWidth) + var(--margin));
+  padding-top: 10px;
+}
+
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10dvh 20px 0;
+  width: 95dvw;
+  max-width: 1800px;
+}
+
+.slide {
+  max-width: 30dvw;
+  margin: var(--margin);
+}
+
+@media (max-width: 1024px) {
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .leftColumn {
+    margin-left: 0;
+  }
+
+  .carousel {
+    display: none;
+  }
+}
+
+@media (max-width: 580px) {
+  .title {
+    font-size: 28px;
+  }
+
+  .date_title {
+    font-size: 12px;
+  }
+
+  .date_value {
+    font-size: 20px;
+  }
+
+  .session {
+    flex-direction: column;
+    margin-right: auto;
+  }
+
+  .date {
+    margin-right: auto;
+  }
+
+  .sessionTimesList {
+    margin: var(--margin) 0;
+  }
+}
+
+
+@media (max-width: 1600px) {
+  .wrapper {
+    background-position: center 82dvh;
+    background-size: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    background-size: auto;
+    height: 100dvh;
+  }
+}

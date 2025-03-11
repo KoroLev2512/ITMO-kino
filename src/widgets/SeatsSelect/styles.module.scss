@@ -1,0 +1,97 @@
+.seatsSelect {
+  --size: var(--seats-size);
+  --gap: var(--seats-gap);
+
+  display: grid;
+  justify-items: center;
+  gap: calc(var(--gap)*8);
+}
+
+.screen {
+  display: flex;
+  flex-direction: column-reverse;
+  position: relative;
+  padding-top: 52px;
+  text-align: center;
+  color: var(--white-color);
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: "Muller Next Wide Trial ExtraBold", serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 750;
+  line-height: normal;
+  gap: 8px;
+  max-width: 90dvw;
+
+  i {
+    --display-size: 600px;
+    pointer-events: none;
+    font-size: var(--display-size);
+    position: absolute;
+    top: calc(var(--display-size) / -2.3);
+    left: 50%;
+    transform: translateX(-50%);
+    text-shadow: 0 4px 12px var(--white-color);
+  }
+}
+
+.place {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  gap: calc(var(--gap)/1.5);
+  padding-right: calc(var(--size) + var(--gap));
+}
+
+.rows,
+.seats {
+  display: grid;
+  gap: calc(var(--gap)/1);
+  grid-auto-rows: calc(var(--size));
+}
+
+.row {
+  display: grid;
+  align-items: end;
+  justify-items: center;
+}
+
+.seats {
+  font-size: var(--size);
+  grid-template-columns: repeat(34, var(--size));
+}
+
+.info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap);
+  justify-items: center;
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--gap)/2);
+  font-weight: 600;
+}
+
+.available {
+  color: var(--statusAvailable);
+}
+
+.busy {
+  color: var(--statusBusy);
+}
+
+.selected {
+  color: var(--statusSelected)
+}
+
+.pair {
+  margin-right: -10px;
+}
+
+@media (max-width: 860px) {
+  .seatsSelect {
+    gap: calc(var(--gap)*16);
+  }
+}

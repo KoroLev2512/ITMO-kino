@@ -1,0 +1,462 @@
+.wrapper {
+  overflow: hidden;
+}
+
+.title {
+  padding-top: calc(var(--padding) * 4);
+  color: #FFF;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: "Muller Next Wide Trial ExtraBold", serif;
+  font-size: 68px;
+  font-style: normal;
+  font-weight: 750;
+  line-height: 0.9;
+  text-align: left;
+  user-select: none;
+}
+
+.logo {
+  width: 180px;
+  user-select: none;
+}
+
+.highlight {
+  color: #FFD3AA;
+}
+
+.description {
+  color: #FFF;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: Muller, serif;
+  font-size: 23px;
+  font-style: normal;
+  font-weight: 400;
+  max-width: 60dvw;
+  line-height: 1.2;
+  user-select: none;
+}
+
+.image {
+  margin-top: 60px;
+  width: 100%;
+}
+
+.land {
+  display: flex;
+  margin: 60px auto;
+}
+
+.button {
+  border-radius: 11px;
+  background: #FFD3AA;
+  color: #000;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: "Muller Next Wide Trial ExtraBold", serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 750;
+  line-height: normal;
+  padding: 14px 50px;
+  margin-top: calc(var(--margin) * 2);
+  margin-bottom: calc(var(--margin) * 4);
+  cursor: pointer;
+  border: 3px solid #FFD3AA;
+  user-select: none;
+
+  &:hover {
+    background: #000;
+    color: #FFD3AA;
+    border: 3px solid #FFD3AA;
+  }
+}
+
+.movies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--margin);
+  justify-content: center;
+  margin: calc(var(--margin) * 4) 0;
+  user-select: none;
+}
+
+.movie {
+  display: flex;
+  flex-direction: row;
+  gap: calc(var(--margin)*3);
+}
+
+.card_image {
+  width: 38dvw;
+  object-fit: contain;
+}
+
+.card_info {
+  gap: var(--margin);
+}
+
+.card_title {
+  color: #FFF;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: "Muller Next Wide Trial ExtraBold", serif;
+  font-size: 52px;
+  font-style: normal;
+  font-weight: 750;
+  line-height: normal;
+  margin-bottom: 16px;
+}
+
+.card_description {
+  color: #FFF;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: Muller, serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 16px;
+}
+
+.card_director {
+  color: #9E9E9E;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: "Muller Next Wide Trial ExtraBold", serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 750;
+  line-height: normal;
+  margin-bottom: 16px;
+}
+
+.card_button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  justify-content: center;
+  border-radius: 9.444px;
+  border: 1px solid #FFF;
+  color: #FFF;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: "Muller Next Wide Trial ExtraBold", serif;
+  font-size: 14.08px;
+  font-style: normal;
+  font-weight: 750;
+  line-height: normal;
+  background: initial;
+  padding: 14px 35px;
+  cursor: pointer;
+}
+
+.director_name {
+  color: #FFF;
+}
+
+.date_title, .time_title, .place_title {
+  color: #FFD3AA;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: "Muller Next Wide Trial ExtraBold", serif;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 750;
+  line-height: normal;
+  margin-top: 47px;
+  max-width: 50dvw;
+  user-select: none;
+}
+
+.date_value, .place_value {
+  color: #FFF;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: "Muller Next Wide Trial ExtraBold", serif;
+  font-size: 45px;
+  font-style: normal;
+  font-weight: 750;
+  line-height: normal;
+  max-width: 50dvw;
+  user-select: none;
+}
+
+.time_description {
+  color: #FFF;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: "Muller Next Wide Trial ExtraBold", serif;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 750;
+  line-height: normal;
+  margin: var(--margin) 0 47px;
+  max-width: 45dvw;
+  user-select: none;
+}
+
+.movieList {
+  margin-top: var(--margin);
+}
+
+.sessionTimesList {
+  display: flex;
+  flex-direction: row;
+  gap: var(--margin);
+}
+
+.sessionTime {
+  color: black;
+  border-radius: 16.2px;
+  background: #FFF;;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  padding: 20px 25px;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: "Muller Next Wide Trial ExtraBold", serif;
+  font-size: 19.449px;
+  font-style: normal;
+  font-weight: 750;
+  line-height: normal;
+  max-width: 140px;
+  box-shadow: 0 6.863px 6.863px 0 rgba(0, 0, 0, 0.32), 5.147px 6.863px 53.704px 0 rgba(255, 255, 255, 0.37);
+  user-select: none;
+
+  &:hover {
+    box-shadow: 2px 4px 8px rgba(255, 255, 255, 0.3);
+  }
+}
+
+.soon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #FFF;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: "Muller Next Wide Trial ExtraBold", serif;
+  font-size: 71px;
+  font-style: normal;
+  font-weight: 750;
+  line-height: normal;
+}
+
+.registration_button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  color: #000;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: "Muller Next Wide Trial ExtraBold", serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 750;
+  line-height: normal;
+  border-radius: 11px;
+  background: #FFD3AA;
+  border: 3px solid #FFD3AA;
+  padding: 15px;
+  width: 40dvw;
+  max-width: 800px;
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    background: #000;
+    color: #FFD3AA;
+    border: 3px solid #FFD3AA;
+  }
+}
+
+.glasses {
+  background-image: url("../../../public/images/glasses.png");
+  background-position: right top;
+  background-repeat: no-repeat;
+  margin-bottom: calc(var(--margin) * 12);
+}
+
+.k {
+  display: none;
+}
+
+@media (max-width: 1250px) {
+  .glasses {
+    background: none;
+  }
+
+  .k {
+    display: flex;
+    margin-left: auto;
+    margin-top: -60px;
+    overflow: hidden;
+  }
+
+  .glasses {
+    margin-bottom: calc(var(--margin) * 10);
+  }
+}
+
+@media (max-width: 1024px) {
+  .logo {
+    width: 150px;
+  }
+
+  .title {
+    font-size: 54px;
+    padding-top: calc(var(--padding) * 2);
+  }
+
+  .description {
+    font-size: 19px;
+    padding-top: calc(var(--padding) * 1);
+  }
+
+  .image {
+    margin-top: 30px;
+  }
+
+  .button {
+    font-size: 14px;
+  }
+
+  .card_title {
+    font-size: 34px;
+  }
+
+  .card_description, .card_director {
+    font-size: 14px;
+  }
+
+  .card_button, .registration_button {
+    padding: 12px 30px;
+    font-size: 14px;
+  }
+
+  .card_image {
+    max-width: 440px;
+    margin-right: auto;
+  }
+
+  .date_title, .time_title, .place_title {
+    font-size: 14px;
+  }
+
+  .date_value, .place_value {
+    font-size: 20px;
+  }
+
+  .k {
+    width: 550px;
+    margin-top: -10px;
+  }
+
+  .soon {
+    font-size: 54px;
+  }
+
+  .land {
+    max-width: 700px;
+  }
+
+  .glasses {
+    margin-bottom: calc(var(--margin) * 8);
+  }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    width: 120px;
+  }
+
+  .title {
+    font-size: 26px;
+    padding-top: calc(var(--padding) * 1.5);
+  }
+
+  .description {
+    font-size: 13px;
+    padding-top: calc(var(--padding) * 1.5);
+  }
+
+  .image {
+    padding-top: 28dvh;
+  }
+
+  .button {
+    display: flex;
+    align-items: center;
+    margin: 17px auto;
+    font-size: 14px;
+  }
+
+  .movie {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .card_title {
+    font-size: 29px;
+  }
+
+  .card_description, .card_director {
+    font-size: 9px;
+  }
+
+  .card_button, .registration_button {
+    padding: 10px 25px;
+    font-size: 9px;
+  }
+
+  .card_image {
+    width: 100%;
+    max-width: 500px;
+    margin-right: auto;
+  }
+
+  .date_title, .time_title, .place_title {
+    font-size: 10px;
+  }
+
+  .date_value, .place_value {
+    font-size: 14px;
+  }
+
+  .k {
+    width: 450px;
+    margin-top: -10px;
+  }
+
+  .land {
+    max-width: 50dvw;
+  }
+
+  .soon {
+    font-size: 26px;
+    text-align: center;
+    margin-bottom: var(--margin);
+  }
+
+  .land {
+    max-width: 400px;
+  }
+
+  .glasses {
+    margin-bottom: calc(var(--margin) * 6);
+  }
+}
+
+@media (max-width: 580px) {
+  .logo {
+    width: 100px;
+  }
+
+  .k {
+    width: 70dvw;
+    margin-top: 0;
+  }
+
+  .sessionTime {
+    padding: 12px 18px;
+    font-size: 16px;
+  }
+
+  .glasses {
+    margin-bottom: calc(var(--margin) * 4);
+  }
+}

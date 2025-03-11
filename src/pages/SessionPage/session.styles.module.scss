@@ -1,0 +1,128 @@
+.bg {
+    min-height: 1000px;
+    height: 100dvh;
+    max-width: 1600px;
+    margin: 0 auto;
+    background-image: url("../../../public/images/chairs-bg-red.png");
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: 1550px;
+    margin: 0 auto;
+    gap: var(--gap);
+    position: relative;
+    min-height: 100%;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: calc(var(--margin));
+    align-items: flex-start;
+    margin-top: calc(var(--margin) * 2);
+}
+
+.date {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 180px;
+    padding: 15px;
+    border-radius: 12px;
+    background: #FFF;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.32), 3px 4px 31.3px 0 rgba(255, 255, 255, 0.37);
+}
+
+.date_title {
+    color: #BABABA;
+    font-family: "Muller Next Wide Trial ExtraBold", serif;
+    font-size: 13.375px;
+    font-style: normal;
+    font-weight: 750;
+    line-height: normal;
+}
+
+.date_time {
+    color: #000;
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: "Muller Next Wide Trial ExtraBold", serif;
+    font-size: 13.375px;
+    font-style: normal;
+    font-weight: 750;
+    line-height: normal;
+}
+
+.info {
+    display: grid;
+    gap: calc(var(--margin) * 2);
+    margin: 40px auto;
+}
+
+.button {
+    display: flex;
+    padding: 12px 30px;
+    border-radius: 5px;
+    color: var(--light);
+    background-color: var(--accent);
+    margin: 20px auto;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--brand-blue-color);
+    }
+}
+
+.title {
+    text-align: center;
+}
+
+.total {
+    font-size: 28px;
+
+    span {
+        font-weight: 100;
+        margin-right: calc(var(--margin) / 2);
+    }
+}
+
+.titleCenter {
+    align-self: center;
+}
+
+.disable {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.accept {
+    position: absolute;
+    bottom: -10dvh;
+    background-color: white;
+}
+
+@media (max-width: 650px) {
+    .wrapper {
+        align-items: flex-start;
+    }
+
+    .content {
+        overflow-x: hidden;
+        white-space: nowrap;
+    }
+
+    .bg {
+        min-height: 100dvh;
+    }
+}
+
+

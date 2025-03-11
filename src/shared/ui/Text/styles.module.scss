@@ -1,0 +1,18 @@
+.text {
+  display: flex;
+  align-items: center;
+
+  svg {
+    padding-right: 8px;
+  }
+}
+
+label.text {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.center {
+  text-align: center;
+  justify-content: center;
+}

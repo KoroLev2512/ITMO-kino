@@ -1,0 +1,191 @@
+@use "./colors.scss";
+@use "./style.css";
+@use "./mixins.scss";
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Golos+Text:wght@400..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=PT+Sans+Caption:wght@400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@font-face {
+  font-family: "Muller Next Wide Trial ExtraBold";
+  src: url("../../../public/fonts/Muller-Next/MullerNextWideTrial-ExtraBold.ttf");
+}
+
+@font-face {
+  font-family: "Muller";
+  src: url("../../../public/fonts/Muller/MullerLight.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: url("../../../public/fonts/Montserrat-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat-Medium";
+  src: url("../../../public/fonts/Montserrat-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat-Semibold";
+  src: url("../../../public/fonts/Montserrat-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat-Bold";
+  src: url("../../../public/fonts/Montserrat-Bold.ttf");
+}
+
+html, body {
+  background-color: var(--main-color);
+  color: var(--white-color);
+  font-family: "Montserrat-Regular", serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+button, svg {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+:root {
+  /* Colors */
+  --primary-background-color: #f5f8f9;
+  --secondary-background-color: #ffffff;
+
+  --accent: deepskyblue;
+  --secondary: #7f8e91;
+  --linkColor: #17b6eb;
+  --default: #333;
+  --light: white;
+
+  --statusAvailable: #1780CE;
+  --statusBusy: #FF292B;
+  --statusSelected: #888888;
+
+  --white-color: #fff;
+  --light-gray-color: #f5f8f9;
+  --secondary-gray-color: #d9d9d9;
+  --gray-color: #73848c;
+  --brand-red-color: #ff2525;
+  --brand-blue-color: #1e51a4;
+  --main-color: #000000;
+  --sucess-color: #0da600;
+  --warning-color: #ed0b0b;
+  --button-color: #2482fe;
+  --button-hover-color: #1e71de;
+  --burger-hover-color: rgba(156, 196, 255, 0.6);
+  --arrow-hover-color: rgba(115, 132, 140, 0.25);
+
+  --input-disabled-bg: rgba(136, 136, 136, 0.25);
+  --input-color-text: #000000;
+  --shadow-base: rgba(0, 0, 0, 0.2);
+  --header-color: #f5f8f9;
+
+  /* Sizes */
+  --imgWidth: 350px;
+  --radius: 20px;
+  --padding: 16px;
+  --margin: 16px;
+
+  /* Seats Map */
+  --seats-size: 28px;
+  --seats-gap: 4px;
+
+  @media (max-width: 1200px) {
+    --seats-size: 24px;
+    --seats-gap: 4px;
+  }
+
+  @media (max-width: 1000px) {
+    --seats-size: 20px;
+    --seats-gap: 4px;
+  }
+
+  @media (max-width: 860px) {
+    --seats-size: 16px;
+    --seats-gap: 2px;
+  }
+
+  @media (max-width: 600px) {
+    --seats-size: 14px;
+    --seats-gap: 1px;
+  }
+}
+
+:root[data-theme="dark"] {
+  --primary-background-color: #151111;
+  --secondary-background-color: #1E2228;
+
+  --white-color: #1E2228;
+  --light-gray-color: #262B33;
+  --secondary-gray-color: #656565;
+  --gray-color: #A8C1CC;
+  --brand-red-color: #FF2525;
+  --brand-blue-color: #367BEC;
+  --main-color: #ffffff;
+  --success-color: #0da600;
+  --warning-color: #ed0b0b;
+  --button-color: #2482fe;
+  --button-hover-color: #1e71de;
+  --burger-hover-color: rgba(130, 180, 255, 0.25);
+  --arrow-hover-color: rgba(159, 159, 159, 0.3);
+
+  --input-disabled-bg: #9f9f9f;
+  --input-color-text: #000000;
+  --shadow-base: rgba(256, 256, 256, 0.3);
+  --header-color: #0b0b15;
+}
+
+p {
+  @include mixins.paragraph-2;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  margin-bottom: 0.275em;
+}
+
+h1 {
+  @include mixins.heading-1;
+  color: var(--main-color);
+}
+
+h2 {
+  @include mixins.heading-2;
+  color: var(--main-color);
+}
+
+h3 {
+  @include mixins.heading-3;
+  color: var(--main-color);
+}
+
+h4 {
+  @include mixins.heading-4;
+  color: var(--main-color);
+}
+
+h5 {
+  @include mixins.heading-5;
+}
+
+input:disabled {
+  background-color: var(--input-disabled-bg);
+  color: var(--input-color-text);
+}
+
+a {
+  text-decoration: none;
+  color: var(--linkColor);
+}
+
+.hover:hover {
+  cursor: pointer;
+  filter: brightness(110%);
+}

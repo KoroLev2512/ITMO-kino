@@ -1,0 +1,28 @@
+.Seat {
+  position: relative;
+  color: var(--accent);
+
+  &:not([class*=busy]) {
+    cursor: pointer;
+  }
+}
+.seatNum {
+  pointer-events: none;
+  position: absolute;
+  top: 78%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--light);
+  font-size: calc(var(--seats-size) * 0.4);
+  font-weight: 700;
+}
+
+.available {
+  color: var(--statusAvailable);
+}
+.busy {
+  color: var(--statusBusy);
+}
+.selected {
+  color: var(--statusSelected);
+}

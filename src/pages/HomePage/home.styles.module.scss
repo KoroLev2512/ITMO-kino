@@ -1,0 +1,36 @@
+.bg {
+  background-image: url("../../../public/images/background_landing.png");
+  background-repeat: no-repeat;
+  background-size: 100dvw;
+  background-position: center 0;
+}
+
+.wrapper {
+  height: 100%;
+  margin: 0 auto;
+  min-height: 100dvh;
+  max-width: 1700px;
+  padding: calc(var(--padding) * 4) 5dvw calc(var(--padding) * 20) 5dvw;
+  background-image: url("../../../public/images/chairs-bg-orange.png");
+  background-repeat: no-repeat;
+  background-size: 100dvw;
+  background-position: bottom;
+}
+
+@media (max-width: 1600px) {
+  .wrapper {
+    background-size: auto;
+  }
+}
+
+@media (max-width: 1024px) {
+  .wrapper {
+    padding: calc(var(--padding) * 3) 5dvw calc(var(--padding) * 20) 5dvw;
+  }
+}
+
+@media (min-width: 1600px) {
+  .wrapper {
+    background-size: auto;
+  }
+}

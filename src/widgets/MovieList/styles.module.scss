@@ -1,0 +1,54 @@
+.movieList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, auto));
+  gap: 16px;
+  padding: 0 24px 100px;
+  max-width: 1700px;
+  margin: 0 auto;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 4px 8px 16px rgba(255, 255, 255, 0.2);
+  max-width: calc(var(--imgWidth)*1.4);
+  border-radius: var(--radius);
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  background-color: white;
+  //width: var(--imgWidth);
+  //border: 1px solid rgba(0, 0, 0, 0.1);
+  //margin-top: calc(var(--padding)*2);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.title {
+  font-family: "Montserrat", sans-serif;
+  text-align: start;
+  font-size: 24px;
+  margin: 30px 0 0 20px;
+  color: #000;
+}
+
+.description {
+  font-family: Montserrat, sans-serif;
+  text-align: center;
+  font-size: 12px;
+  margin: 8px 0 20px 20px;
+  color: #7f8e91;
+}
+
+.image {
+  height: calc(var(--imgWidth) * 0.75);
+  margin: calc(var(--padding)*-1);
+  position: relative;
+  overflow: hidden;
+  object-fit: cover;
+}

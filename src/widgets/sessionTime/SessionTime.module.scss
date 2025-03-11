@@ -1,0 +1,26 @@
+.sessionTime {
+  color: black;
+  border-radius: 16.2px;
+  background: #FFF;;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  padding: 20px 25px;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: "Muller Next Wide Trial ExtraBold", serif;
+  font-size: 19.449px;
+  font-style: normal;
+  font-weight: 750;
+  line-height: normal;
+
+  &:hover {
+    box-shadow: 2px 4px 8px rgba(255, 255, 255, 0.3);
+  }
+}
+
+@media (max-width: 580px) {
+  .sessionTime {
+    padding: 12px 18px;
+    font-size: 16px;
+  }
+}
