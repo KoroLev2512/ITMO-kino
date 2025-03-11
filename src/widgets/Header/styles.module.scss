@@ -1,26 +1,29 @@
 .Header {
-  --firstColWidth: 100px;
-  display: grid;
-  grid-template-columns: var(--firstColWidth) 1fr;
+  display: flex;
   align-items: center;
+  justify-content: center;
   gap: var(--margin);
   height: 80px;
+  width: 100%;
+  position: relative;
 }
 
 .backBtn {
+  position: absolute;
+  left: 0;
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  margin-right: auto;
   color: var(--light);
   background: none;
   padding: 8px 20px;
   border-radius: 4px;
+  gap: 10px;
+  cursor: pointer;
 }
 
 .title {
   display: flex;
   align-items: center;
+  justify-content: center;
   color: #FFF;
   font-feature-settings: 'liga' off, 'clig' off;
   font-family: "Muller Next Wide Trial ExtraBold", serif;
@@ -29,5 +32,7 @@
   font-weight: 750;
   line-height: normal;
   margin-top: var(--margin);
-  padding-right: calc(var(--firstColWidth) + var(--margin));
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
