@@ -139,7 +139,8 @@ export const SessionPage = () => {
                                 </div>
                             </div>}
                         </div>}
-                        <h3 className={classNames(style.title, style.titleCenter)}>No seats selected</h3>                        {qrCode && <div className={style.qr}>
+                        <h3 className={classNames(style.title, style.titleCenter)}></h3>
+                        {qrCode && <div className={style.qr}>
                             <img ref={imgRef} src="" alt="QR Code"/>
                         </div>}
                     </div>
