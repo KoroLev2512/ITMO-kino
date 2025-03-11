@@ -15,8 +15,8 @@ pipeline {
         }
         stage('Stop previous dev-server') {
             steps {
-                sh 'pm2 stop dev-server || true'
-                sh 'pm2 delete dev-server || true'
+                sh 'pm2 stop itmo-kino || true'
+                sh 'pm2 delete itmo-kino || true'
             }
         }
         stage('Setup frontend dev-server') {
