@@ -1,5 +1,10 @@
 pipeline {
     agent any
+
+    environment {
+        HOST = '127.0.0.1'
+    }
+    
     stages {
         stage('Checkout') {
             steps {
