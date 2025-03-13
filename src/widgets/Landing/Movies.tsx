@@ -65,7 +65,7 @@ export const Movies = () => {
                             animate={isInView ? { opacity: 1, scale: 1 } : {}}
                             transition={{ duration: 1, delay: 0.7 }}
                         >
-                            Трейлер <PlayIcon />
+                            Тизер <PlayIcon />
                         </motion.button>
                     </motion.div>
                 </motion.div>

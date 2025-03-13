@@ -13,13 +13,13 @@ export const Header = (props: HeaderProps) => {
 
     return (
         <div className={style.Header}>
-            <Link to='/' className={classNames('hover', style.backBtn)} onClick={onClick}>
+            <Link to='/movie/1' className={classNames('hover', style.backBtn)} onClick={onClick}>
                 <img
                     src="/icons/arrow-icon.svg"
                     alt="arrow"
                     className={style.arrow}
                 />
-                Главная</Link>
+                Назад</Link>
             <Title center className={style.title}>{title}</Title>
         </div>
     )
