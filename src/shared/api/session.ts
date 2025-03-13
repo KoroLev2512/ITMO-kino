@@ -7,8 +7,12 @@ const sessionsApi = rtkApi.injectEndpoints({
       query: (id) => `sessions/${id}?_expand=seat&_expand=movie`,
       keepUnusedDataFor: 0
     }),
+    getRegistrationById: build.query<Session, string>({
+      query: (id) => `registration/${id}?_expand=seat&_expand=movie`,
+      keepUnusedDataFor: 0
+    }),
   }),
   overrideExisting: false,
 })
 
-export const { useGetSessionByIdQuery } = sessionsApi
+export const { useGetSessionByIdQuery, useGetRegistrationByIdQuery } = sessionsApi

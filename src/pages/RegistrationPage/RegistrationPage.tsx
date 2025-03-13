@@ -1,11 +1,12 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
-import style from './regitration.styles.module.scss';
+// import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import style from './registration.styles.module.scss';
+
 
 export const RegistrationPage = () => {
-    const location = useLocation();
-    const premier = location.state?.premier;
+    // const location = useLocation();
+    // const premier = location.state?.premier;
 
     const clearOrderInStore = () => {
         console.log('clearOrderInStore');
@@ -23,9 +24,21 @@ export const RegistrationPage = () => {
                     <div className={style.description}>
                         После подтверждения регистрации билет придёт на почту, привязанную к ITMO ID. Если не придет, обратитесь к @vlkvmshh в телеграмм
                     </div>
-                    <div className={style.date}>
-                        {premier && <p>Дата премьеры: {premier}</p>}
+                    <div className={style.info}>
+                        <div className={style.date}>
+                            <div className={style.date_title}>Дата</div>
+                            <div className={style.date_value}>28.03.2025</div>
+                        </div>
+                        <div>
+                            <div className={style.place_title}>Время</div>
+                            <div className={style.date_value}>17:00</div>
+                        </div>
                     </div>
+                    <img
+                        src="/images/landing.png"
+                        alt="header"
+                        className={style.land}
+                    />
                 </div>
             </div>
         </div>

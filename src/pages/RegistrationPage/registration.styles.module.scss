@@ -70,3 +70,53 @@
   line-height: normal;
   margin-top: var(--margin);
 }
+
+.info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 34px 57px 34px 38px;
+  margin: var(--margin) 0;
+  border-radius: 14.772px;
+  background: #1D1F23;
+  gap: calc(var(--margin) * 4);
+}
+
+.date_title, .place_title {
+  color: #FFD3AA;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: "Muller Next Wide Trial ExtraBold", serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 750;
+  line-height: normal;
+  max-width: 50dvw;
+  user-select: none;
+}
+
+.date_value, .time_value {
+  color: #FFF;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: "Muller Next Wide Trial ExtraBold", serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 750;
+  line-height: normal;
+  max-width: 50dvw;
+  user-select: none;
+}
+
+.land {
+  display: flex;
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .date_title, .time_title {
+    font-size: 14px;
+  }
+
+  .date_value, .time_value {
+    font-size: 20px;
+  }
+}

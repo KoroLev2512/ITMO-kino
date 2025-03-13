@@ -2,8 +2,8 @@ import React, {useRef} from 'react';
 import {Movies} from "./Movies";
 import {Head} from "./Head";
 import {Date} from "./Date";
-import styles from "./styles.module.scss";
 import {Soon} from "./Soon";
+import styles from "./styles.module.scss";
 
 export const Landing = () => {
     const soonRef = useRef(null);

@@ -20,7 +20,7 @@ export const Soon = () => {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 1, delay: 0.2 }}
             >
-                <Title className={styles.soon}>Ждём на премьере!</Title>
+                <Title className={styles.soon}>Выбирайте сеанс <span className={styles.highlight}> и регистрируйтесь</span></Title>
             </motion.div>
 
             <motion.div
@@ -28,12 +28,20 @@ export const Soon = () => {
                 animate={isInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 1, delay: 0.4 }}
             >
-                <Link to='https://itmo.events/'
-                      className={styles.registration_button}
-                      target="_blank"
-                      rel="noopener noreferrer">
-                    Зарегистрироваться
-                </Link>
+                <div className={styles.buttons}>
+                    <Link to='https://itmo.events/events/108557'
+                          className={styles.registration_button}
+                          target="_blank"
+                          rel="noopener noreferrer">
+                        16:30
+                    </Link>
+                    <Link to='https://itmo.events/events/110111'
+                          className={styles.registration_button}
+                          target="_blank"
+                          rel="noopener noreferrer">
+                        19:00
+                    </Link>
+                </div>
             </motion.div>
 
             <motion.img

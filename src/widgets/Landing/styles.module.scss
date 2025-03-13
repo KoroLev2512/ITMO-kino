@@ -22,6 +22,7 @@
 
 .highlight {
   color: #FFD3AA;
+  margin: 0 0 0 1dvw;
 }
 
 .description {
@@ -82,7 +83,7 @@
 .movie {
   display: flex;
   flex-direction: row;
-  gap: calc(var(--margin)*3);
+  gap: calc(var(--margin) * 3);
 }
 
 .card_image {
@@ -91,7 +92,11 @@
 }
 
 .card_info {
-  gap: var(--margin);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: var(--margin) 0;
 }
 
 .card_title {
@@ -145,6 +150,25 @@
   background: initial;
   padding: 14px 35px;
   cursor: pointer;
+
+  &:hover {
+    background: #FFF;
+    color: #000;
+
+    svg {
+      circle {
+        fill: black;
+      }
+
+      path {
+        fill: white;
+      }
+    }
+  }
+}
+
+.hidden_button {
+  display: none;
 }
 
 .director_name {
@@ -224,16 +248,31 @@
 
 .soon {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   color: #FFF;
   font-feature-settings: 'liga' off, 'clig' off;
   font-family: "Muller Next Wide Trial ExtraBold", serif;
-  font-size: 71px;
+  font-size: 42px;
   font-style: normal;
   font-weight: 750;
   line-height: normal;
+  padding: 32px 0;
+}
+
+.highlight {
+  color: #FFD3AA;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  gap: var(--margin);
+  max-width: 50dvw;
 }
 
 .registration_button {
@@ -268,7 +307,7 @@
   background-image: url("../../../public/images/glasses.png");
   background-position: right top;
   background-repeat: no-repeat;
-  margin-bottom: calc(var(--margin) * 12);
+  margin-bottom: calc(var(--margin) * 9);
 }
 
 .k {
@@ -347,6 +386,7 @@
   }
 
   .soon {
+    flex-direction: column;
     font-size: 54px;
   }
 
@@ -356,6 +396,10 @@
 
   .glasses {
     margin-bottom: calc(var(--margin) * 8);
+  }
+
+  .buttons {
+    max-width: 65dvw;
   }
 }
 
@@ -376,6 +420,10 @@
 
   .image {
     padding-top: 28dvh;
+  }
+
+  .buttons {
+    max-width: 50dvw;
   }
 
   .button {
@@ -462,5 +510,9 @@
 
   .land {
     width: 90dvw;
+  }
+
+  .buttons {
+    max-width: 65dvw;
   }
 }
