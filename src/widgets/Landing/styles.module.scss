@@ -457,7 +457,8 @@
   }
 
   .description {
-    font-size: 13px;
+    width: 100%;
+    font-size: 18px;
     padding-top: calc(var(--padding) * 1.5);
   }
 
@@ -486,7 +487,7 @@
   }
 
   .card_description, .card_director {
-    font-size: 9px;
+    font-size: 14px;
   }
 
   .card_button, .registration_button {
