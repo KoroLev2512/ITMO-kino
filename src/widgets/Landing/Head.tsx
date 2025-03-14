@@ -24,14 +24,24 @@ export const Head: React.FC<HeadProps> = ({ soonRef }) => {
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ duration: 1 }}
         >
-            <motion.img
-                className={styles.logo}
-                src="/icons/logo_horizontal.svg"
-                alt="logo"
-                initial={{ opacity: 0, y: -20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 1, delay: 0.2 }}
-            />
+            <div className={styles.logotips}>
+                <motion.img
+                    className={styles.itmo}
+                    src="/images/itmo.png"
+                    alt="logo"
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 1, delay: 0.2 }}
+                />
+                <motion.img
+                    className={styles.logo}
+                    src="/icons/logo_horizontal.svg"
+                    alt="logo"
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 1, delay: 0.2 }}
+                />
+            </div>
             <Title className={styles.title}>
                 <motion.span
                     className={styles.highlight}

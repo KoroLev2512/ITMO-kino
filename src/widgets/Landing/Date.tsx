@@ -46,13 +46,13 @@ export const Date = () => {
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={isInView ? { opacity: 1, scale: 1 } : {}}
                         transition={{ duration: 1, delay: 0.8 }}
-                    >17:00</motion.div>
+                    >16:30</motion.div>
                     <motion.div
                         className={styles.sessionTime}
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={isInView ? { opacity: 1, scale: 1 } : {}}
                         transition={{ duration: 1, delay: 1 }}
-                    >19:30</motion.div>
+                    >19:00</motion.div>
                 </div>
                 <motion.div
                     className={styles.time_description}
@@ -71,7 +71,7 @@ export const Date = () => {
                 transition={{ duration: 1, delay: 1.4 }}
             >
                 <h3 className={styles.place_title}>Место</h3>
-                <div className={styles.place_value}>Кинолофт «Москва»,<br/>пл. Александра Невского, 2</div>
+                <div className={styles.place_value}>Кинотеатр отеля «Москва»<br/>пл. Александра Невского 2</div>
             </motion.div>
 
             <motion.img

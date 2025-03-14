@@ -20,7 +20,7 @@ export const Soon = () => {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 1, delay: 0.2 }}
             >
-                <Title className={styles.soon}>Выбирайте сеанс <span className={styles.highlight}> и регистрируйтесь</span></Title>
+                <Title className={styles.soon}>Выбирайте сеанс <span className={styles.highlightMargin}> и регистрируйтесь</span></Title>
             </motion.div>
 
             <motion.div
@@ -44,14 +44,23 @@ export const Soon = () => {
                 </div>
             </motion.div>
 
-            <motion.img
-                src="/images/landing.png"
-                alt="header"
-                className={styles.land}
+            <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 1, delay: 0.6 }}
-            />
+                className={styles.land}
+            >
+                <motion.img
+                    src="/images/landing.svg"
+                    alt="header"
+                />
+                <div className={styles.tg}>
+                    следите за нами в tg:
+                    <Link to="https://t.me/cgitmo/" className={styles.tg_link}>
+                        @cgitmo
+                    </Link>
+                </div>
+            </motion.div>
         </motion.div>
     );
 };

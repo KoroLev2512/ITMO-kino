@@ -15,12 +15,27 @@
   user-select: none;
 }
 
+.logotips {
+  display: flex;
+  flex-direction: column;
+}
+
+.itmo {
+  display: flex;
+  margin-left: auto;
+  max-width: 130px;
+}
+
 .logo {
   width: 180px;
   user-select: none;
 }
 
 .highlight {
+  color: #FFD3AA;
+}
+
+.highlightMargin {
   color: #FFD3AA;
   margin: 0 0 0 1dvw;
 }
@@ -44,7 +59,27 @@
 
 .land {
   display: flex;
+  flex-direction: column;
   margin: 60px auto;
+}
+
+.tg {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  color: #A8A8A8;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: Muller, serif;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  gap: 3px;
+}
+
+.tg_link {
+  cursor: pointer;
+  color: #A8A8A8;
 }
 
 .button {
@@ -336,6 +371,10 @@
     width: 150px;
   }
 
+  .itmo {
+    max-width: 98px;
+  }
+
   .title {
     font-size: 54px;
     padding-top: calc(var(--padding) * 2);
@@ -406,6 +445,10 @@
 @media (max-width: 768px) {
   .logo {
     width: 120px;
+  }
+
+  .itmo {
+    max-width: 70px;
   }
 
   .title {
@@ -486,6 +529,11 @@
 
   .glasses {
     margin-bottom: calc(var(--margin) * 6);
+  }
+
+  .tg {
+    font-size: 10px;
+    gap: 1px;
   }
 }
 
