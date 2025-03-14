@@ -24,7 +24,7 @@ pipeline {
                 sh 'pm2 delete itmo-kino || true'
             }
         }
-        stage('Update node version') {
+        stage('Update node version && setup frontend server') {
             steps {
                 sh '''#!/bin/bash
                 echo "=== Before sourcing nvm ==="
@@ -35,16 +35,11 @@ pipeline {
 
                 echo "=== After nvm use 22.14.0 ==="
                 node --version
+                
+                npm i
+                npm run build
+                pm2 start npm --name "itmo-kino" -- start
                 '''
-            }
-        }
-        stage('Setup frontend dev-server') {
-            steps {
-                sh 'node --version'
-                sh 'nvm version'
-                sh 'npm i'
-                sh 'npm run build'
-                sh 'pm2 start npm --name "itmo-kino" -- start'
             }
         }
     }
