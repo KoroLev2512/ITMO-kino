@@ -27,7 +27,7 @@ pipeline {
         stage('Setup frontend dev-server') {
             steps {
                 sh 'npm i'
-                // sh 'npm run build'
+                sh 'npm run build'
                 sh 'pm2 start npm --name "itmo-kino" -- start'
             }
         }
