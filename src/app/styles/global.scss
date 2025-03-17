@@ -4,8 +4,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Golos+Text:wght@400..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=PT+Sans+Caption:wght@400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 @font-face {
+  font-family: "NauryzRedKeds";
+  src: url("../../../public/fonts/Nauryz/NauryzRedKeds.ttf");
+}
+
+@font-face {
   font-family: "Muller Next Wide Trial ExtraBold";
   src: url("../../../public/fonts/Muller-Next/MullerNextWideTrial-ExtraBold.ttf");
+}
+
+@font-face {
+  font-family: "Muller Next Wide Trial Heavy";
+  src: url("../../../public/fonts/Muller-Next/MullerNextWideTrial-Heavy.ttf");
+}
+
+@font-face {
+  font-family: "Muller Next Wide Trial Regular";
+  src: url("../../../public/fonts/Muller-Next/MullerNextWideTrial-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Muller Next Wide Trial Thin";
+  src: url("../../../public/fonts/Muller-Next/MullerNextWideTrial-Thin.ttf");
 }
 
 @font-face {
@@ -15,22 +35,22 @@
 
 @font-face {
   font-family: "Montserrat-Regular";
-  src: url("../../../public/fonts/Montserrat-Regular.ttf");
+  src: url("../../../public/fonts/Montserrat/Montserrat-Regular.ttf");
 }
 
 @font-face {
   font-family: "Montserrat-Medium";
-  src: url("../../../public/fonts/Montserrat-Medium.ttf");
+  src: url("../../../public/fonts/Montserrat/Montserrat-Medium.ttf");
 }
 
 @font-face {
   font-family: "Montserrat-Semibold";
-  src: url("../../../public/fonts/Montserrat-SemiBold.ttf");
+  src: url("../../../public/fonts/Montserrat/Montserrat-SemiBold.ttf");
 }
 
 @font-face {
   font-family: "Montserrat-Bold";
-  src: url("../../../public/fonts/Montserrat-Bold.ttf");
+  src: url("../../../public/fonts/Montserrat/Montserrat-Bold.ttf");
 }
 
 html, body {

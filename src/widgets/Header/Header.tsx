@@ -19,7 +19,8 @@ export const Header = (props: HeaderProps) => {
                     alt="arrow"
                     className={style.arrow}
                 />
-                Назад</Link>
+                Назад
+            </Link>
             <Title center className={style.title}>{title}</Title>
         </div>
     )

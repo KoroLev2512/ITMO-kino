@@ -1,128 +1,321 @@
 .bg {
-    min-height: 1000px;
-    height: 100dvh;
-    max-width: 1600px;
-    margin: 0 auto;
-    background-image: url("../../../public/images/chairs-bg-red.png");
-    background-position: bottom;
-    background-repeat: no-repeat;
-    background-size: contain;
+  min-height: 1000px;
+  height: 100dvh;
+  max-width: 1600px;
+  margin: 0 auto;
+  background-image: url("../../../public/images/chairs-bg-red.png");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    max-width: 1550px;
-    margin: 0 auto;
-    gap: var(--gap);
-    position: relative;
-    min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  max-width: 1550px;
+  margin: 0 auto;
+  gap: var(--gap);
+  position: relative;
+  min-height: 100%;
 }
 
 .content {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: calc(var(--margin));
-    align-items: flex-start;
-    margin-top: calc(var(--margin) * 2);
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: calc(var(--margin));
+  align-items: flex-start;
+  margin-top: calc(var(--margin) * 2);
 }
 
 .date {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    max-width: 180px;
-    padding: 15px;
-    border-radius: 12px;
-    background: #FFF;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.32), 3px 4px 31.3px 0 rgba(255, 255, 255, 0.37);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 180px;
+  padding: 15px;
+  border-radius: 12px;
+  background: #FFF;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.32), 3px 4px 31.3px 0 rgba(255, 255, 255, 0.37);
 }
 
 .date_title {
-    color: #BABABA;
-    font-family: "Muller Next Wide Trial ExtraBold", serif;
-    font-size: 13.375px;
-    font-style: normal;
-    font-weight: 750;
-    line-height: normal;
+  color: #BABABA;
+  font-family: "Muller Next Wide Trial ExtraBold", serif;
+  font-size: 13.375px;
+  font-style: normal;
+  font-weight: 750;
+  line-height: normal;
 }
 
 .date_time {
-    color: #000;
-    font-feature-settings: 'liga' off, 'clig' off;
-    font-family: "Muller Next Wide Trial ExtraBold", serif;
-    font-size: 13.375px;
-    font-style: normal;
-    font-weight: 750;
-    line-height: normal;
+  color: #000;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: "Muller Next Wide Trial ExtraBold", serif;
+  font-size: 13.375px;
+  font-style: normal;
+  font-weight: 750;
+  line-height: normal;
 }
 
-.info {
-    display: grid;
-    gap: calc(var(--margin) * 2);
-    margin: 40px auto;
+.popup {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 25px 50px;
+  gap: calc(var(--margin) * 2);
+  margin: 10px auto 0;
+  max-width: 1200px;
+  width: 84dvw;
+  border-radius: 16px;
+  background: #FFF;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.32), 3px 4px 31.3px 0 rgba(255, 255, 255, 0.37);
+  position: fixed;
+  bottom: 5dvh;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.popup_date, .popup_seat {
+  display: flex;
+  flex-direction: column;
+  margin: auto 0;
+}
+
+.popup_date_text, .popup_seat_text {
+  color: #FF292B;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: "Muller Next Wide Trial ExtraBold", serif;
+  font-size: 12.736px;
+  font-style: normal;
+  font-weight: 750;
+  line-height: normal;
+}
+
+.popup_info {
+  display: flex;
+  flex-direction: row;
+}
+
+.popup_date_title {
+  color: #BABABA;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: "Muller Next Wide Trial ExtraBold", serif;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 750;
+  line-height: normal;
+}
+
+.popup_date_time {
+  color: #000;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: "Muller Next Wide Trial ExtraBold", serif;
+  font-size: 22.292px;
+  font-style: normal;
+  font-weight: 750;
+  line-height: normal;
 }
 
 .button {
-    display: flex;
-    padding: 12px 30px;
-    border-radius: 5px;
-    color: var(--light);
-    background-color: var(--accent);
-    margin: 20px auto;
-    border: none;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin: auto 0;
+  color: var(--light);
+  border-radius: 12px;
+  background: #FF292B;
+  padding: 14px 25px;
+  max-height: 20px;
+  border: none;
+  cursor: pointer;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: "Muller Next Wide Trial ExtraBold", serif;
+  font-size: 15.543px;
+  font-style: normal;
+  font-weight: 750;
+  line-height: normal;
 
-    &:hover {
-        background-color: var(--brand-blue-color);
-    }
+  &:hover {
+    background-color: var(--brand-blue-color);
+  }
 }
 
 .title {
-    text-align: center;
+  text-align: center;
 }
 
 .total {
-    font-size: 28px;
+  font-size: 28px;
 
-    span {
-        font-weight: 100;
-        margin-right: calc(var(--margin) / 2);
-    }
+  span {
+    font-weight: 100;
+    margin-right: calc(var(--margin) / 2);
+  }
 }
 
 .titleCenter {
-    align-self: center;
+  align-self: center;
 }
 
 .disable {
-    pointer-events: none;
-    opacity: 0.5;
+  pointer-events: none;
+  opacity: 0.5;
 }
 
 .accept {
-    position: absolute;
-    bottom: -10dvh;
-    background-color: white;
+  position: absolute;
+  bottom: 10dvh;
+  background-color: white;
+}
+
+.header {
+  width: 100dvw;
+}
+
+.complete_popup_overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+
+  z-index: 1000;
+}
+
+.complete_popup_content {
+  background: #FFF;
+  padding: 16px;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.close_popup_button {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-left: auto;
+  background: none;
+}
+
+.complete_popup_button {
+  color: #FFF;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: "Muller Next Wide Trial ExtraBold", serif;
+  font-size: 15.543px;
+  font-style: normal;
+  font-weight: 750;
+  line-height: normal;
+  border-radius: 12px;
+  background: #FF292B;
+  border: none;
+  padding: 15px 30px;
+  margin: 30px 0 20px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--brand-blue-color);
+  }
+}
+
+.popupButton:hover {
+  background: var(--brand-blue-color);
+}
+
+.complete_popup_title {
+  color: #000;
+  text-align: center;
+  font-family: "Muller Next Wide Trial ExtraBold", serif;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 750;
+  line-height: normal;
+  margin-bottom: var(--margin);
+  padding: 0 30px;
+}
+
+.complete_popup_text {
+  color: #808080;
+  text-align: center;
+  font-family: "Muller Next Wide Trial Regular", serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 750;
+  line-height: normal;
+  margin-bottom: var(--margin);
+  padding: 0 30px;
+}
+
+.complete_popup_seat_text {
+  color: #000;
+  text-align: center;
+  font-family: "Muller Next Wide Trial Regular", serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 750;
+  line-height: normal;
+  margin-bottom: calc(var(--margin)/2);
+  padding: 0 30px;
+}
+
+.complete_popup_seats {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "Muller Next Wide Trial Regular", serif;
+  color: #000;
+}
+
+@media (max-width: 1200px) {
+  .content {
+    margin-top: var(--margin);
+  }
+}
+
+@media (max-width: 1060px) {
+
+}
+
+@media (max-width: 768px) {
+  .content {
+    margin-top: calc(var(--margin) / 3);
+  }
 }
 
 @media (max-width: 650px) {
-    .wrapper {
-        align-items: flex-start;
-    }
+  .wrapper {
+    align-items: flex-start;
+  }
 
-    .content {
-        overflow-x: hidden;
-        white-space: nowrap;
-    }
+  .content {
+    overflow-x: hidden;
+    white-space: nowrap;
+  }
 
-    .bg {
-        min-height: 100dvh;
-    }
+  .bg {
+    min-height: 100dvh;
+  }
+}
+
+@media (max-width: 540px) {
+  .bg {
+    background: none;
+  }
+
+  .header {
+    display: none;
+  }
 }
 
 

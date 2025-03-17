@@ -1,8 +1,10 @@
-import {useParams, useNavigate} from 'react-router-dom'
+import {useParams, useNavigate, Link} from 'react-router-dom'
 import {Text} from '../../shared/ui/Text'
 import {useGetMovieByIdQuery} from '../../shared/api'
 import {SessionTime} from '../../widgets/SessionTime'
 import {Session} from '../../shared/types'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper-bundle.css';
 
 import style from './movie.styles.module.scss'
 
@@ -30,7 +32,13 @@ export const MoviePage = () => {
     };
 
     if (isLoading) return <h1>Загрузка...</h1>
-    if (!data) return <Text center>Фильм не найден</Text>
+    if (!data) return (
+        <div className={style.error}>
+            <Text center className={style.title}>Фильм не найден</Text>
+            <Link to={'/'}><button className={style.errorButton}>На главную</button></Link>
+        </div>
+
+    )
 
     return (
         <div className={style.bg}>
@@ -47,31 +55,31 @@ export const MoviePage = () => {
                         </div>
                     </div>
                 </div>
-                {/*<Swiper*/}
-                {/*    className={style.carousel}*/}
-                {/*    slidesPerView={3}*/}
-                {/*    loop={true}*/}
-                {/*    onClick={handleRegisterClick}*/}
-                {/*>*/}
-                {/*    <SwiperSlide>*/}
-                {/*        <img src="/images/blue_slide.png" alt="Blue Slide" className={style.slide} />*/}
-                {/*    </SwiperSlide>*/}
-                {/*    <SwiperSlide>*/}
-                {/*        <img src="/images/pink_slide.png" alt="Pink Slide" className={style.slide} />*/}
-                {/*    </SwiperSlide>*/}
-                {/*    <SwiperSlide>*/}
-                {/*        <img src="/images/red_slide.png" alt="Red Slide" className={style.slide} />*/}
-                {/*    </SwiperSlide>*/}
-                {/*    <SwiperSlide>*/}
-                {/*        <img src="/images/blue_slide.png" alt="Blue Slide" className={style.slide} />*/}
-                {/*    </SwiperSlide>*/}
-                {/*    <SwiperSlide>*/}
-                {/*        <img src="/images/pink_slide.png" alt="Pink Slide" className={style.slide} />*/}
-                {/*    </SwiperSlide>*/}
-                {/*    <SwiperSlide>*/}
-                {/*        <img src="/images/red_slide.png" alt="Red Slide" className={style.slide} />*/}
-                {/*    </SwiperSlide>*/}
-                {/*</Swiper>*/}
+                <Swiper
+                    className={style.carousel}
+                    slidesPerView={3}
+                    loop={true}
+                    onClick={handleRegisterClick}
+                >
+                    <SwiperSlide>
+                        <img src="/images/blue_slide.png" alt="Blue Slide" className={style.slide} />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <img src="/images/pink_slide.png" alt="Pink Slide" className={style.slide} />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <img src="/images/red_slide.png" alt="Red Slide" className={style.slide} />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <img src="/images/blue_slide.png" alt="Blue Slide" className={style.slide} />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <img src="/images/pink_slide.png" alt="Pink Slide" className={style.slide} />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <img src="/images/red_slide.png" alt="Red Slide" className={style.slide} />
+                    </SwiperSlide>
+                </Swiper>
                 {/*<div className={style.content}>*/}
                 {/*  <div className={style.leftColumn}>*/}
                 {/*  </div>*/}

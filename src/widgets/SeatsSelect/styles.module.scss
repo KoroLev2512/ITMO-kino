@@ -11,7 +11,7 @@
   display: flex;
   flex-direction: column-reverse;
   position: relative;
-  padding-top: 52px;
+  padding-top: 3dvh;
   text-align: center;
   color: var(--white-color);
   font-feature-settings: 'liga' off, 'clig' off;
@@ -47,17 +47,35 @@
   display: grid;
   gap: calc(var(--gap)/1);
   grid-auto-rows: calc(var(--size));
+  color: #FFF;
+  text-align: center;
+  font-family: "Muller Next Wide Trial Regular", serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 750;
+  line-height: normal;
 }
 
 .row {
   display: grid;
   align-items: end;
   justify-items: center;
+  color: #FFF;
+  text-align: center;
+  font-family: NauryzRedKeds, serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 }
 
 .seats {
   font-size: var(--size);
   grid-template-columns: repeat(34, var(--size));
+}
+
+.numbers {
+  font-size: 30px;
 }
 
 .info {
@@ -72,6 +90,17 @@
   align-items: center;
   gap: calc(var(--gap)/2);
   font-weight: 600;
+}
+
+.text {
+  color: #FFF;
+  text-align: center;
+  font-family: "Muller Next Wide Trial ExtraBold", serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 750;
+  line-height: normal;
+  margin-left: 0.3dvw;
 }
 
 .available {
@@ -90,8 +119,23 @@
   margin-right: -10px;
 }
 
+@media (min-width: 1200px) {
+  .text {
+    font-size: 16px;
+  }
+}
+
+
 @media (max-width: 860px) {
   .seatsSelect {
     gap: calc(var(--gap)*16);
+  }
+
+  .row {
+    font-size: 12px;
+  }
+
+  .text {
+    font-size: 10px;
   }
 }

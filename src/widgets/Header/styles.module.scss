@@ -27,7 +27,7 @@
   color: #FFF;
   font-feature-settings: 'liga' off, 'clig' off;
   font-family: "Muller Next Wide Trial ExtraBold", serif;
-  font-size: 42.057px;
+  font-size: 42px;
   font-style: normal;
   font-weight: 750;
   line-height: normal;
@@ -35,4 +35,23 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+}
+
+@media (max-width: 1024px) {
+  .title {
+    font-size: 38px;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 26px;
+    margin-top: calc(var(--margin)/2);
+  }
+}
+
+@media (max-width: 540px) {
+  .title {
+    display: none;
+  }
 }

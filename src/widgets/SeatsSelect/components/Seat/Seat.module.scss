@@ -19,6 +19,10 @@
 
 .available {
   color: var(--statusAvailable);
+
+  &:hover {
+    color: #03F;;
+  }
 }
 .busy {
   color: var(--statusBusy);

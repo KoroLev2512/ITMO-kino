@@ -59,15 +59,15 @@ export const SeatSelect = ({buySeats}: SeatsSelectProps) => {
             <div className={styles.info}>
                 <div className={classNames(styles.infoItem, styles.available)}>
                     <i className="ic-dot"/>
-                    <span>Свободно</span>
+                    <span className={styles.text}>Свободно</span>
                 </div>
                 <div className={classNames(styles.infoItem, styles.busy)}>
                     <i className="ic-dot busy"/>
-                    <span>Занято</span>
+                    <span className={styles.text}>Занято</span>
                 </div>
                 <div className={classNames(styles.infoItem, styles.selected)}>
                     <i className="ic-dot selected"/>
-                    <span>Выбрано</span>
+                    <span className={styles.text}>Выбрано</span>
                 </div>
             </div>
         </div>
