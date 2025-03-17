@@ -62,24 +62,24 @@
       "id": 2,
       "buy_seats": [
         {
-          "row": 5,
-          "seat": 5
+          "row": 0,
+          "seat": 0
         },
         {
-          "row": 6,
+          "row": 4,
           "seat": 14
         },
         {
-          "row": 5,
-          "seat": 17
+          "row": 4,
+          "seat": 15
         },
         {
-          "row": 3,
+          "row": 4,
           "seat": 16
         },
         {
-          "row": 9,
-          "seat": 15
+          "row": 4,
+          "seat": 17
         }
       ]
     },
@@ -87,8 +87,8 @@
       "id": 3,
       "buy_seats": [
         {
-          "row": 5,
-          "seat": 5
+          "row": 0,
+          "seat": 0
         }
       ]
     },

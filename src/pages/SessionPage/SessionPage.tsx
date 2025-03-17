@@ -23,7 +23,7 @@ export const SessionPage = () => {
     const { isLoading, data: sessionData } = useGetSessionByIdQuery(params.sessionId!);
     const { data: movieData } = useGetMovieByIdQuery(params.movieId!);
     const [buyTicket, { isSuccess }] = useUpdateSeatsByIdMutation();
-    const { order } = useSelector((state: RootState) => state);
+    const order = useSelector((state: RootState) => state.order);
     const price = 500;
     const seatsCount = order.seats.length;
     const totalPrice = price * seatsCount;

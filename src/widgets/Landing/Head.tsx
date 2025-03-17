@@ -4,7 +4,7 @@ import styles from "./styles.module.scss";
 import { Title } from "../../shared/ui/Title";
 
 interface HeadProps {
-    soonRef: RefObject<HTMLDivElement>;
+    soonRef: RefObject<HTMLDivElement | null>;
 }
 
 export const Head: React.FC<HeadProps> = ({ soonRef }) => {
