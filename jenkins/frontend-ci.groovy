@@ -3,6 +3,7 @@ pipeline {
 
     environment {
         HOST = '127.0.0.1'
+        GENERATE_SOURCEMAP = "true"
     }
     
     stages {
