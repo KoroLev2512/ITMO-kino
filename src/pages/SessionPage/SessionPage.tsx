@@ -143,9 +143,6 @@ export const SessionPage = () => {
                                 })}
                                 onClick={onClick}
                             >Продолжить
-                                {/*<div className={style.accept}>*/}
-                                {/*    готово*/}
-                                {/*</div>*/}
                             </div>}
                         </div>}
                         {qrCode && (
