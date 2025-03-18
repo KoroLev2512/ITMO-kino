@@ -159,7 +159,7 @@ export const SessionPage = () => {
                                     <div className={style.complete_popup_seats}>
                                         <TablePopup data={getOrderInfo(order)} />
                                     </div>
-                                    <a href="/movie/1" >
+                                    <a href="/movie/1">
                                         <button className={style.complete_popup_button}>К сеансам</button>
                                     </a>
                                 </div>
