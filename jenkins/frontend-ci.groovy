@@ -10,7 +10,7 @@ pipeline {
             steps {
                 git branch: 'main',
                     credentialsId: 'github',
-                    url: 'git@github.com:KoroLev2512/ITMO-kino.git'
+                    url: 'git@github-ITMO-kino:KoroLev2512/ITMO-kino.git'
             }
         }
         stage('Check current state') {
