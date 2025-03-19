@@ -104,6 +104,12 @@
     color: #FFD3AA;
     border: 3px solid #FFD3AA;
   }
+  @media (hover: none) {
+    &:hover {
+      background: #FFD3AA;
+      color: #000;
+    }
+  }
 }
 
 .movies {
@@ -197,6 +203,21 @@
 
       path {
         fill: white;
+      }
+    }
+  }
+  @media (hover: none) {
+    &:hover {
+      background: initial;
+      color: #FFF;
+      svg {
+        circle {
+          fill: white;
+        }
+
+        path {
+          fill: black;
+        }
       }
     }
   }
@@ -335,6 +356,12 @@
     background: #000;
     color: #FFD3AA;
     border: 3px solid #FFD3AA;
+  }
+  @media (hover: none) {
+    &:hover {
+      background: #FFD3AA;
+      color: #000;
+    }
   }
 }
 

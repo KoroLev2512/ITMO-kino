@@ -23,6 +23,11 @@
   &:hover {
     color: #03F;;
   }
+  @media (hover: none) {
+    &:hover {
+      color: var(--statusAvailable);
+    }
+  }
 }
 .busy {
   color: var(--statusBusy);

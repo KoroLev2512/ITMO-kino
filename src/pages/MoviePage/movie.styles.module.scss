@@ -135,6 +135,11 @@
   &:hover {
     background-color: var(--brand-blue-color);
   }
+  @media (hover: none) {
+    &:hover {
+      background-color: black;
+    }
+  }
 }
 
 .errorText {
@@ -159,6 +164,11 @@
 
   &:hover {
     background-color: var(--brand-blue-color);
+  }
+  @media (hover: none) {
+    &:hover {
+      background-color: var(--gray-color);
+    }
   }
 }
 

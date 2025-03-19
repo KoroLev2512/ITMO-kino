@@ -143,6 +143,11 @@
   &:hover {
     background-color: var(--brand-blue-color);
   }
+  @media (hover: none) {
+    &:hover {
+      background-color: #FF292B;
+    }
+  }
 }
 
 .title {
@@ -226,6 +231,11 @@
 
   &:hover {
     background-color: var(--brand-blue-color);
+  }
+  @media (hover: none) {
+    &:hover {
+      background-color: #FF292B;
+    }
   }
 }
 
