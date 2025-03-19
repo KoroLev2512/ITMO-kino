@@ -29,13 +29,13 @@ export const RegistrationPage = () => {
                             <div className={style.date_title}>Дата</div>
                             <div className={style.date_value}>28.03.2025</div>
                         </div>
-                        <div>
+                        <div className={style.place}>
                             <div className={style.place_title}>Время</div>
                             <div className={style.date_value}>17:00</div>
                         </div>
                     </div>
                     <img
-                        src="/images/landing.png"
+                        src="/images/landing.svg"
                         alt="header"
                         className={style.land}
                     />

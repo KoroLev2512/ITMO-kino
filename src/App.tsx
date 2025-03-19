@@ -12,7 +12,7 @@ const router = createBrowserRouter(
         {path: "/", element: <HomePage/>},
         {path: "/movie/:id", element: <MoviePage/>},
         {path: "/movie/:movieId/sessions/:sessionId", element: <SessionPage/>},
-        { path: "/movie/:movieId/registration/", element: <RegistrationPage /> },
+        {path: "/movie/:movieId/registration/", element: <RegistrationPage /> },
     ],
     {
         future: {

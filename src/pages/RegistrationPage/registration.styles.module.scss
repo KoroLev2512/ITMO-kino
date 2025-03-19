@@ -22,16 +22,17 @@
 
 .backButton {
   position: absolute;
-  left: 0;
+  left: 20px;
   display: flex;
   color: var(--white-color);
   border: none;
-  padding-top: 25px;
   border-radius: 5px;
   cursor: pointer;
   background-color: initial;
   gap: 10px;
   margin-left: 0;
+  max-width: 1720px;
+  padding-top: calc(var(--margin) * 1.5);
 }
 
 .content {
@@ -108,7 +109,30 @@
 
 .land {
   display: flex;
+  align-items: flex-end;
+  height: 80dvh;
   width: 100%;
+}
+
+@media (max-width: 1400px) {
+  .wrapper {
+    padding: calc(var(--margin) * 3) calc(var(--margin) * 2) 0;
+    max-width: 100dvw;
+  }
+
+  .title {
+    padding-top: calc(var(--margin) * 2);
+  }
+
+  .content {
+    margin: 0;
+  }
+
+  .backButton {
+    padding: 0 calc(var(--margin) * 2) 0;
+    margin: 0;
+    left: 0;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -118,5 +142,52 @@
 
   .date_value, .time_value {
     font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 34px
+  }
+
+  .description {
+    font-size: 20px;
+    margin-bottom: var(--margin);
+  }
+
+  .date_title, .place_title {
+    font-size: 12px;
+  }
+
+  .date_value, .place_value {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 580px) {
+  .land {
+    height: 60dvh;
+  }
+
+  .title {
+    font-size: 28px
+  }
+
+  .description {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 400px) {
+  .info {
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0;
+    gap: var(--margin);
+    padding: 24px 36px;
+  }
+
+  .date, .place {
+    margin-right: auto;
   }
 }
