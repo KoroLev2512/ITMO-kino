@@ -39,7 +39,7 @@ pipeline {
                 
                 npm i
                 npm run build
-                pm2 start npm --name "itmo-kino" -- start
+                pm2 start npm --name "itmo-kino" -- run server
                 '''
             }
         }
