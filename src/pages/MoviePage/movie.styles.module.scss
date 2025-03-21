@@ -124,19 +124,23 @@
   align-items: center;
   justify-content: center;
   color: var(--white-color);
-  border: none;
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
-  background-color: black;
   font-family: "Muller Next Wide Trial Regular", serif;
   font-size: 12px;
   font-weight: 750;
+  background-color: initial;
+  border: 0.2px solid #FFF;
+
   &:hover {
-    background-color: var(--brand-blue-color);
+    color: black;
+    background-color: var(--white-color);
   }
+
   @media (hover: none) {
     &:hover {
+      color: var(--white-color);
       background-color: black;
     }
   }
@@ -149,27 +153,6 @@
   font-size: 28px;
   color: black;
   padding-right: calc(var(--firstColWidth) + var(--margin));
-}
-
-.errorButton {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--white-color);
-  border: none;
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  background-color: var(--gray-color);
-
-  &:hover {
-    background-color: var(--brand-blue-color);
-  }
-  @media (hover: none) {
-    &:hover {
-      background-color: var(--gray-color);
-    }
-  }
 }
 
 .title {

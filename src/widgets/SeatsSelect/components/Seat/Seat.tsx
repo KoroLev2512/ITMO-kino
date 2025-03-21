@@ -8,7 +8,7 @@ interface SeatProps {
   data: {
     row: number
     seat: number
-    status: string // 'available' | 'busy' | 'selected'
+    status: string
   }
 }
 

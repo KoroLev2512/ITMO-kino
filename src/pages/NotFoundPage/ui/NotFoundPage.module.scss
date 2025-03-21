@@ -1,0 +1,52 @@
+.NotFoundPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: calc(var(--margin)*2);
+}
+
+.errorButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white-color);
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Muller Next Wide Trial Regular", serif;
+    font-size: 12px;
+    font-weight: 750;
+    background-color: initial;
+    border: 0.2px solid #FFF;
+
+    &:hover {
+        color: black;
+        background-color: var(--white-color);
+    }
+
+    @media (hover: none) {
+        &:hover {
+            color: var(--white-color);
+            background-color: black;
+        }
+    }
+}
+
+.title {
+    justify-content: flex-start;
+    align-items: flex-start;
+    max-width: 1200px;
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: "Muller Next Wide Trial ExtraBold", serif;
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 750;
+    line-height: normal;
+    color: var(--white-color);
+    padding-right: calc(var(--firstColWidth) + var(--margin));
+    padding-top: 10px;
+}
+
+

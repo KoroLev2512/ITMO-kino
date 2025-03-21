@@ -130,6 +130,21 @@ button, svg {
     --seats-size: 14px;
     --seats-gap: 1px;
   }
+
+  @media (max-width: 540px) {
+    --seats-size: 12px;
+    --seats-gap: 0.5px;
+  }
+
+  @media (max-width: 450px) {
+    --seats-size: 10px;
+    --seats-gap: 0.5px;
+  }
+
+  @media (max-width: 380px) {
+    --seats-size: 8px;
+    --seats-gap: 0.3px;
+  }
 }
 
 :root[data-theme="dark"] {
