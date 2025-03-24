@@ -55,7 +55,6 @@ export const SeatSelect = ({buySeats}: SeatsSelectProps) => {
                     })}
                 </div>
             </div>
-
             <div className={styles.info}>
                 <div className={classNames(styles.infoItem, styles.available)}>
                     <i className="ic-dot"/>
