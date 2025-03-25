@@ -35,12 +35,12 @@ export const Soon = () => {
                           rel="noopener noreferrer">
                         16:30
                     </Link>
-                    <Link to='https://itmo.events/events/110111'
-                          className={styles.registration_button}
-                          target="_blank"
-                          rel="noopener noreferrer">
-                        19:00
-                    </Link>
+                    {/*<Link to='https://itmo.events/events/110111'*/}
+                    {/*      className={styles.registration_button}*/}
+                    {/*      target="_blank"*/}
+                    {/*      rel="noopener noreferrer">*/}
+                    {/*    19:00*/}
+                    {/*</Link>*/}
                 </div>
             </motion.div>
 
