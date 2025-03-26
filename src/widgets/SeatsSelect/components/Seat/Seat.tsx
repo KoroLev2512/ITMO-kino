@@ -10,12 +10,13 @@ interface SeatProps {
     seat: number
     status: string
   }
+  className?: string
 }
 
-export const Seat = ({ data }: SeatProps) => {
+export const Seat = ({ data }: SeatProps, className:string) => {
   const { row, seat, status: initStatus } = data
   const [status, setStatus] = useState(initStatus);
-  const classes = classNames(style.Seat, style[status])
+  const classes = classNames(style.Seat, style[status], className)
   const dispatch = useDispatch()
 
   const onClick = () => {

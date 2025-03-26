@@ -10,10 +10,10 @@ export const Landing = () => {
 
     return (
         <div className={styles.wrapper}>
-            <Head soonRef={soonRef} />
-            <Movies />
-            <Date />
-            <div ref={soonRef}><Soon /></div>
+            <Head soonRef={soonRef}/>
+            <Movies/>
+            <Date/>
+            <div ref={soonRef}><Soon/></div>
         </div>
     );
 };

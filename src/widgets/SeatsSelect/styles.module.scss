@@ -11,7 +11,7 @@
   display: flex;
   flex-direction: column-reverse;
   position: relative;
-  padding-top: 3dvh;
+  padding-top: 1dvh;
   text-align: center;
   color: var(--white-color);
   font-feature-settings: 'liga' off, 'clig' off;
@@ -21,7 +21,8 @@
   font-weight: 750;
   line-height: normal;
   gap: 8px;
-  max-width: 90dvw;
+  max-width: 95dvw;
+  margin-top: calc(var(--margin))/2;
 
   i {
     --display-size: 600px;
@@ -83,6 +84,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: var(--gap);
   justify-items: center;
+  margin-top: var(--margin);
 }
 
 .infoItem {
