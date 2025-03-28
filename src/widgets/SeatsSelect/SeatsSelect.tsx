@@ -52,6 +52,7 @@ const generateSeats = (
                 ? 'busy'
                 : 'available',
         };
+
         seats.push(seatData);
 
         if (seatNum === 1) {
