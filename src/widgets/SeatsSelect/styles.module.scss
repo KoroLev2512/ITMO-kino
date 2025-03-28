@@ -197,6 +197,12 @@
   }
 
   .marginTop {
-    margin-top: 16px;
+    margin-top: 13px;
+  }
+}
+
+@media (max-width: 380px) {
+  .marginTop {
+    margin-top: 10px;
   }
 }

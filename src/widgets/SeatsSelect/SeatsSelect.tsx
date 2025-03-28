@@ -32,7 +32,8 @@ const generateSeats = (
     const seats: (ISeatWithId | null)[] = [];
     let id = 1;
     let row = 1;
-    let seatNum = 1;
+    let currentRowMax = resetNums[row - 1];
+    let seatNum = currentRowMax;
 
     for (let i = 0; i < 507; i++) {
         if (emptyCells.includes(i)) {
@@ -40,7 +41,6 @@ const generateSeats = (
             continue;
         }
 
-        const currentRowMax = resetNums[row - 1];
         const currentRow = row;
         const currentSeatNum = seatNum;
 
@@ -54,11 +54,14 @@ const generateSeats = (
         };
         seats.push(seatData);
 
-        if (seatNum === currentRowMax) {
+        if (seatNum === 1) {
             row++;
-            seatNum = 1;
+            if (row <= resetNums.length) {
+                currentRowMax = resetNums[row - 1];
+                seatNum = currentRowMax;
+            }
         } else {
-            seatNum++;
+            seatNum--;
         }
     }
     return seats;
