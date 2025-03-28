@@ -24,7 +24,6 @@ const emptyCellsForward = [
     228, 229, 230, 231, 232, 233, 234, 476, 477, 478
 ]
 
-// Генерация мест без переворачивания нумерации внутри ряда.
 const generateSeats = (
     buySeats: ISeat[] | undefined,
     resetNums: number[],
@@ -65,7 +64,6 @@ const generateSeats = (
     return seats;
 };
 
-// Группировка мест по рядам
 // const groupSeatsByRow = (seats: (ISeatWithId | null)[]): (ISeatWithId | null)[][] => {
 //     const groups: (ISeatWithId | null)[][] = []
 //     let currentRow = 1
