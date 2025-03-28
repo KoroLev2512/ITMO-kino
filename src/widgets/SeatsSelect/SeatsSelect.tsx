@@ -14,12 +14,14 @@ interface ISeatWithId extends ISeat {
     status: string;
 }
 
-const resetNumsForward = [34, 34, 34, 34, 34, 28, 28, 28, 28, 28, 28, 28, 28, 28]
+const resetNumsForward = [34, 34, 34, 34, 34, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28]
 const emptyCellsForward = [
     184, 185, 186, 187, 188, 189, 204, 205, 206, 235, 236, 237, 238, 239, 240,
     269, 270, 271, 272, 273, 274, 303, 304, 305, 306, 307, 308, 337, 338, 339,
     340, 341, 342, 371, 372, 373, 374, 375, 376, 405, 406, 407, 408, 409, 410,
-    439, 440, 441, 442, 443, 444, 473, 474, 475
+    439, 440, 441, 442, 443, 444, 473, 474, 475, 207, 208, 209, 210, 211, 212,
+    213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227,
+    228, 229, 230, 231, 232, 233, 234, 476, 477, 478
 ]
 
 // Генерация мест без переворачивания нумерации внутри ряда.
@@ -28,64 +30,66 @@ const generateSeats = (
     resetNums: number[],
     emptyCells: number[]
 ): (ISeatWithId | null)[] => {
-    const seats: (ISeatWithId | null)[] = []
-    let id = 1
-    let row = 1
-    let seatNum = 1
+    const seats: (ISeatWithId | null)[] = [];
+    let id = 1;
+    let row = 1;
+    let seatNum = 1;
 
-    for (let i = 0; i < 476; i++) {
+    for (let i = 0; i < 507; i++) {
         if (emptyCells.includes(i)) {
-            seats.push(null)
-            continue
+            seats.push(null);
+            continue;
         }
 
-        const currentRowMax = resetNums[row - 1]
+        const currentRowMax = resetNums[row - 1];
+        const currentRow = row;
+        const currentSeatNum = seatNum;
 
         const seatData: ISeatWithId = {
             id: id++,
-            row,
-            seat: seatNum,
-            status: buySeats?.some(s => s.row === row && s.seat === seatNum)
+            row: currentRow,
+            seat: currentSeatNum,
+            status: buySeats?.some(s => s.row === currentRow && s.seat === currentSeatNum)
                 ? 'busy'
                 : 'available',
-        }
-        seats.push(seatData)
+        };
+        seats.push(seatData);
 
         if (seatNum === currentRowMax) {
-            row++
-            seatNum = 1
+            row++;
+            seatNum = 1;
         } else {
-            seatNum++
+            seatNum++;
         }
     }
-    return seats
-}
+    return seats;
+};
 
 // Группировка мест по рядам
-const groupSeatsByRow = (seats: (ISeatWithId | null)[]): (ISeatWithId | null)[][] => {
-    const groups: (ISeatWithId | null)[][] = []
-    let currentRow = 1
-    let currentGroup: (ISeatWithId | null)[] = []
-    seats.forEach(item => {
-        if (item && item.row > currentRow) {
-            groups.push(currentGroup)
-            currentGroup = []
-            currentRow = item.row
-        }
-        currentGroup.push(item)
-    })
-    if (currentGroup.length) groups.push(currentGroup)
-    return groups
-}
+// const groupSeatsByRow = (seats: (ISeatWithId | null)[]): (ISeatWithId | null)[][] => {
+//     const groups: (ISeatWithId | null)[][] = []
+//     let currentRow = 1
+//     let currentGroup: (ISeatWithId | null)[] = []
+//     seats.forEach(item => {
+//         if (item && item.row > currentRow) {
+//             groups.push(currentGroup)
+//             currentGroup = []
+//             currentRow = item.row
+//         }
+//         currentGroup.push(item)
+//     })
+//     if (currentGroup.length) groups.push(currentGroup)
+//     return groups
+// }
 
 export const SeatSelect = ({ buySeats }: SeatsSelectProps) => {
     const allSeats = generateSeats(buySeats, resetNumsForward, emptyCellsForward);
     const rowsCount = 14;
     const rows = Array.from({ length: rowsCount }, (_, i) => i + 1);
 
-    const forwardRowsReverse = groupSeatsByRow(allSeats);
-    const reverseRows = forwardRowsReverse.slice().reverse();
-    const reverseSeatsFlat = reverseRows.flat();
+    // const forwardRowsReverse = groupSeatsByRow(allSeats);
+    // const reverseRows = forwardRowsReverse.slice().reverse();
+    // const reverseSeatsFlat = reverseRows.flat();
 
     return (
         <div className={styles.seatsSelect}>
@@ -96,7 +100,12 @@ export const SeatSelect = ({ buySeats }: SeatsSelectProps) => {
             <div className={styles.place}>
                 <div className={styles.rows}>
                     {rows.map((r) => (
-                        <div key={`row-${r}`} className={styles.row}>{r}</div>
+                        <div
+                            key={`row-${r}`}
+                            className={classNames(styles.row, { [styles.marginTop]: r >= 7 })}
+                        >
+                            {r}
+                        </div>
                     ))}
                 </div>
                 <div className={styles.seats}>

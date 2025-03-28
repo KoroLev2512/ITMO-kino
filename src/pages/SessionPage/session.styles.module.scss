@@ -90,7 +90,7 @@
   color: #FF292B;
   font-feature-settings: 'liga' off, 'clig' off;
   font-family: "Muller Next Wide Trial ExtraBold", serif;
-  font-size: 12.736px;
+  font-size: 13px;
   font-style: normal;
   font-weight: 750;
   line-height: normal;
@@ -105,7 +105,7 @@
   color: #BABABA;
   font-feature-settings: 'liga' off, 'clig' off;
   font-family: "Muller Next Wide Trial ExtraBold", serif;
-  font-size: 22px;
+  font-size: 21px;
   font-style: normal;
   font-weight: 750;
   line-height: normal;
@@ -115,7 +115,7 @@
   color: #000;
   font-feature-settings: 'liga' off, 'clig' off;
   font-family: "Muller Next Wide Trial ExtraBold", serif;
-  font-size: 22.292px;
+  font-size: 21px;
   font-style: normal;
   font-weight: 750;
   line-height: normal;
@@ -135,7 +135,7 @@
   cursor: pointer;
   font-feature-settings: 'liga' off, 'clig' off;
   font-family: "Muller Next Wide Trial ExtraBold", serif;
-  font-size: 15.543px;
+  font-size: 15px;
   font-style: normal;
   font-weight: 750;
   line-height: normal;
@@ -143,6 +143,7 @@
   &:hover {
     background-color: var(--brand-blue-color);
   }
+
   @media (hover: none) {
     &:hover {
       background-color: #FF292B;

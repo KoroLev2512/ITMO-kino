@@ -36,6 +36,11 @@
   }
 }
 
+.emptySeat {
+  width: var(--size);
+  height: var(--size);
+}
+
 .place {
   display: grid;
   grid-template-columns: 30px 1fr;
@@ -77,6 +82,10 @@
 
 .numbers {
   font-size: 30px;
+}
+
+.marginTop {
+  margin-top: 42px;
 }
 
 .info {
@@ -127,6 +136,17 @@
   }
 }
 
+@media (max-width: 1200px) {
+  .marginTop {
+    margin-top: 34px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .marginTop {
+    margin-top: 28px;
+  }
+}
 
 @media (max-width: 860px) {
   .seatsSelect {
@@ -139,6 +159,16 @@
 
   .text {
     font-size: 10px;
+  }
+
+  .marginTop {
+    margin-top: 22px;
+  }
+}
+
+@media (max-width: 600px) {
+  .marginTop {
+    margin-top: 18px;
   }
 }
 
@@ -164,5 +194,9 @@
   .info {
     margin-top: 8px;
     font-size: 10px;
+  }
+
+  .marginTop {
+    margin-top: 16px;
   }
 }
