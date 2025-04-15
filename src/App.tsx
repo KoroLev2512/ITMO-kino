@@ -40,11 +40,11 @@ export const App = () => {
                 <meta property="og:url" content="https://itmokino.ru"/>
                 <meta property="og:image" content="https://itmokino.ru/itmokino-metadata.webp"/>
             </Helmet>
-        <Provider store={store}>
-            <div className={style.App}>
-                <RouterProvider router={router}/>
-            </div>
-        </Provider>
+            <Provider store={store}>
+                <div className={style.App}>
+                    <RouterProvider router={router}/>
+                </div>
+            </Provider>
         </HelmetProvider>
     );
 };
