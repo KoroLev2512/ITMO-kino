@@ -11,6 +11,7 @@
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.3.0",
     "react-scripts": "^5.0.1",
+    "react-snap": "^1.23.0",
     "styled-components": "^6.1.15",
     "swiper": "^11.2.5",
     "web-vitals": "^4.2.4"
@@ -20,9 +21,13 @@
     "build:prod": "webpack  --env mode=production",
     "build:dev": "webpack  --env mode=development",
     "build": "react-scripts build",
+    "postbuild": "react-snap",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server": "npx json-server --watch db.json --port 3001 --host 127.0.0.1"
+  },
+  "reactSnap": {
+    "renderAfterDocumentEvent": "REACT_SNAP_RENDERED"
   },
   "eslintConfig": {
     "extends": [

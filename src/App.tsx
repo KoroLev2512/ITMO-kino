@@ -8,7 +8,7 @@ import {NotFoundPage} from "./pages/NotFoundPage";
 import {Provider} from "react-redux";
 import {store} from "./shared/store";
 import {Helmet, HelmetProvider} from "react-helmet-async";
-import React from "react";
+import React, {useEffect} from "react";
 
 const router = createBrowserRouter(
     [
@@ -26,6 +26,9 @@ const router = createBrowserRouter(
 );
 
 export const App = () => {
+    useEffect(() => {
+        document.dispatchEvent(new Event('REACT_SNAP_RENDERED'));
+    }, []);
     return (
         <HelmetProvider>
             <Helmet>
