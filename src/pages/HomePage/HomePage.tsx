@@ -10,7 +10,7 @@ export const HomePage = () => {
             <Helmet>
                 <title>ITMO KINO</title>
                 <meta name="description" content="Мы сделали кино в ИТМО и приглашаем вас его посмотреть" />
-                <meta name="keywords" content="React, SEO, мета-теги" />
+                <meta name="keywords" content="ИТМО, кино, показ, студенты, студенческая жизнь, актив, творчество, тизеры, кинопоказ, кинотеатр" />
                 <meta name="author" content="Yurii Korolev" />
                 <meta property="og:title" content="ИТМО КИНО" />
                 <meta property="og:description" content="Мы сделали кино в ИТМО и приглашаем вас его посмотреть" />
