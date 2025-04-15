@@ -7,7 +7,7 @@
   gap: calc(var(--gap)*8);
 }
 
-.screen {
+.wrapper {
   display: flex;
   flex-direction: column-reverse;
   position: relative;
@@ -34,6 +34,12 @@
     transform: translateX(-50%);
     text-shadow: 0 4px 12px var(--white-color);
   }
+}
+
+.screen {
+  max-width: 1300px;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .emptySeat {
@@ -186,7 +192,7 @@
     font-size: 8px;
   }
 
-  .screen {
+  .wrapper {
     font-size: 12px;
     margin-bottom: 8px;
   }

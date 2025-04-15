@@ -119,12 +119,6 @@ export const SessionPage = () => {
                     <SeatSelect buySeats={sessionData?.seat?.buy_seats}/>
                     <div>
                         {!!seatsCount && <div className={style.popup}>
-                            {/*<InfoTable data={getSessionInfo(movieData.title, sessionData.time)} />*/}
-                            {/*<h3 className={style.title}>Выбранные места</h3>*/}
-                            {/*<InfoTable data={getOrderInfo(order)} />*/}
-                            {/*<div className={style.info}>*/}
-                            {/*  <InfoTable data={getPriceInfo(seatsCount, price)} />*/}
-                            {/*</div>*/}
                             <div className={style.popup_date}>
                                 <p className={style.popup_date_text}>Дата и время</p>
                                 <div className={style.popup_info}>
@@ -135,7 +129,6 @@ export const SessionPage = () => {
                             <div className={style.popup_seat}>
                                 <p className={style.popup_seat_text}>Место</p>
                                 <Table data={getOrderInfo(order)} />
-                                {/*<Table data={getPriceInfo(seatsCount, price)} />*/}
                             </div>
                             {!qrCode && <div
                                 className={classNames(style.button, 'hover', {
@@ -149,7 +142,7 @@ export const SessionPage = () => {
                             <div className={style.complete_popup_overlay}>
                                 <div className={style.complete_popup_content}>
                                     <button className={style.close_popup_button} onClick={handlePopupClose}>
-                                        <img src="/icons/close.svg" alt="close" />
+                                        <img src="/icons/close.webp" alt="close" />
                                     </button>
                                     <p className={style.complete_popup_title}>Ждём на премьере</p>
                                     <p className={style.complete_popup_text}>
@@ -173,7 +166,7 @@ export const SessionPage = () => {
                 </div>
             </div>
             {/*<img*/}
-            {/*    src="/images/chairs-bg-red.png"*/}
+            {/*    src="/images/chairs-bg-red.webp"*/}
             {/*    alt="red-chairs"*/}
             {/*    className={style.bg}*/}
             {/*/>*/}

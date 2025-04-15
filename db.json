@@ -2,7 +2,7 @@
   "movies": [
     {
       "id": 1,
-      "img": "/images/kino.jpg",
+      "img": "/images/kino.webp",
       "title": "Кофе",
       "genre": "Драма",
       "actors": [

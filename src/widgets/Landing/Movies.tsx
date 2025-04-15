@@ -1,8 +1,8 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import StyledPlayIcon from "../../shared/icons/PlayIcon";
-import styles from "./styles.module.scss";
 import { Link } from "react-router-dom";
+import styles from "./styles.module.scss";
 
 export const Movies = () => {
     const ref = useRef(null);
@@ -18,21 +18,21 @@ export const Movies = () => {
         >
             {[
                 {
-                    img: "/images/red_slide.png",
+                    img: "/images/red-slide.webp",
                     title: "Птичка",
                     description: "Как долго можно прятаться в мире грез, где краски ложатся так, как хочется, а линии реальности размыты? В этой истории – противоречие между хочу и надо, мечтой и неизбежностью взросления. Герой прокладывает путь сквозь свои фантазии, пока окружающие не требуют от него настоящего решения. В фильме переживания художника, чья история становится зеркалом для каждого из нас",
                     director: "Арсений Колесник",
                     link: "https://t.me/cgitmo/54"
                 },
                 {
-                    img: "/images/pink_slide.png",
+                    img: "/images/pink-slide.webp",
                     title: "Вкус",
                     description: "Каждое утро Романа Ивановича начиналось с чашки идеального кофе в любимой кофейне. Его жизнь была простой и предсказуемой, пока однажды этот утренний ритуал не обернулся мучительной пыткой, перевернув его мир с ног на голову. Что теперь делать? Принять изменения, попытаться вернуть прежний кофе или искать истину, которая может разрушить все?",
                     director: "Игорь Гомжин",
                     link: "https://t.me/cgitmo/64"
                 },
                 {
-                    img: "/images/blue_slide.png",
+                    img: "/images/blue-slide.webp",
                     title: "В темноте",
                     description: "Взять ли за руку или отступить? Сделать шаг навстречу или дать приоритет чему-то другому? Их история — это эксперимент, в котором два человека проживают возможное будущее, прежде чем рискнуть и сделать первый шаг. В череде бытовых сцен — размышления, сомнения, кризисы, знакомые каждому, кто когда-то выбирал между чувствами и амбициями",
                     director: "Владислав Шиль",
@@ -76,7 +76,7 @@ export const Movies = () => {
                             </Link>
                         ) : (
                             <motion.img
-                                src="/icons/button.svg"
+                                src="/icons/button.webp"
                                 alt="button"
                                 className={styles.card_soon}
                                 initial={{ opacity: 0, scale: 0.8 }}

@@ -16,7 +16,7 @@ export const RegistrationPage = () => {
         <div className={style.bg}>
             <div className={style.wrapper}>
                 <Link to='/movie/1' className={style.backButton} onClick={clearOrderInStore}>
-                    <img src='/icons/arrow-icon.svg' alt='back' className={style.icon} />
+                    <img src='/icons/arrow-icon.webp' alt='back' className={style.icon} />
                     Назад
                 </Link>
                 <div className={style.content}>
@@ -35,7 +35,7 @@ export const RegistrationPage = () => {
                         </div>
                     </div>
                     <img
-                        src="/images/landing.svg"
+                        src="/images/landing.webp"
                         alt="header"
                         className={style.land}
                     />

@@ -1,4 +1,4 @@
-![Image alt](https://github.com/KoroLev2512/ITMO-kino/blob/main/public/icons/logo_horizontal.svg)
+![Image alt](https://github.com/KoroLev2512/ITMO-kino/blob/main/public/icons/logo_horizontal.webp)
 # ITMO KINO: cinema tickets service
 
 Service for the ITMO KINO project with the ability to register and select seats for the session.

@@ -15,7 +15,7 @@ export const Header = (props: HeaderProps) => {
         <div className={style.Header}>
             <Link to='/movie/1' className={classNames('hover', style.backBtn)} onClick={onClick}>
                 <img
-                    src="/icons/arrow-icon.svg"
+                    src="/icons/arrow-icon.webp"
                     alt="arrow"
                     className={style.arrow}
                 />

@@ -37,6 +37,10 @@
   transform: translateX(-50%);
 }
 
+.arrow {
+  width: 12px;
+}
+
 @media (max-width: 1024px) {
   .title {
     font-size: 38px;

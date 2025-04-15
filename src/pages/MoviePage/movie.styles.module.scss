@@ -1,6 +1,6 @@
 .bg {
   min-height: 100dvh;
-  background-image: url("../../../public/images/background.png");
+  background-image: url("../../../public/images/background.webp");
   background-position: center 0;
   background-repeat: no-repeat;
   background-size: cover;
@@ -14,7 +14,7 @@
   max-width: 1720px;
   margin: 0 auto;
   min-height: 100dvh;
-  background-image: url("../../../public/images/chairs-bg-orange.png");
+  background-image: url("../../../public/images/chairs-bg-orange.webp");
   background-position: center 82dvh;
   background-repeat: no-repeat;
 }
@@ -189,6 +189,70 @@
 .slide {
   max-width: 30dvw;
   margin: var(--margin);
+}
+
+.auth {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0 auto;
+}
+
+.authForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.authInput {
+  border: 2px solid #ccc;
+  padding: 10px;
+  margin: var(--margin) 0;
+  background: none;
+  border-radius: 16px;
+  color: var(--white-color);
+}
+
+.authInputError {
+  border-color: red;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  height: 2px;
+  margin-left: 0;
+}
+
+.authButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white-color);
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Muller Next Wide Trial Regular", serif;
+  font-size: 12px;
+  font-weight: 750;
+  background-color: initial;
+  border: 0.2px solid #FFF;
+  max-width: 100px;
+  margin: calc(var(--margin)/2) auto;
+
+
+  &:hover {
+    color: black;
+    background-color: var(--white-color);
+  }
+
+  @media (hover: none) {
+    &:hover {
+      color: var(--white-color);
+      background-color: black;
+    }
+  }
 }
 
 @media (max-width: 1024px) {

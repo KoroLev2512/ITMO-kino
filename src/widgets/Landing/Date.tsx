@@ -75,7 +75,7 @@ export const Date = () => {
             </motion.div>
 
             <motion.img
-                src="/images/glasses.png"
+                src="/images/glasses.webp"
                 alt="header"
                 className={styles.k}
                 initial={{ opacity: 0, scale: 0.9 }}

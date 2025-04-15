@@ -80,6 +80,7 @@
 .tg_link {
   cursor: pointer;
   color: #A8A8A8;
+  padding-bottom: 5dvh;
 }
 
 .button {
@@ -295,7 +296,7 @@
   font-weight: 750;
   line-height: normal;
   max-width: 140px;
-  box-shadow: 0 6.863px 6.863px 0 rgba(0, 0, 0, 0.32), 5.147px 6.863px 53.704px 0 rgba(255, 255, 255, 0.37);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.32), 4px 4px 16px rgba(255, 255, 255, 0.37);
   user-select: none;
 
   &:hover {
@@ -367,7 +368,7 @@
 }
 
 .glasses {
-  background-image: url("../../../public/images/glasses.png");
+  background-image: url("../../../public/images/glasses.webp");
   background-position: right top;
   background-repeat: no-repeat;
   margin-bottom: calc(var(--margin) * 9);

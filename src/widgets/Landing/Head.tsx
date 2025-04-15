@@ -27,7 +27,7 @@ export const Head: React.FC<HeadProps> = ({ soonRef }) => {
             <div className={styles.logotips}>
                 <motion.img
                     className={styles.itmo}
-                    src="/images/itmo.png"
+                    src="/images/itmo.webp"
                     alt="logo"
                     initial={{ opacity: 0, y: -20 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -35,7 +35,7 @@ export const Head: React.FC<HeadProps> = ({ soonRef }) => {
                 />
                 <motion.img
                     className={styles.logo}
-                    src="/icons/logo_horizontal.svg"
+                    src="/icons/logo_horizontal.webp"
                     alt="logo"
                     initial={{ opacity: 0, y: -20 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -65,7 +65,7 @@ export const Head: React.FC<HeadProps> = ({ soonRef }) => {
                 Присоединяйтесь, чтобы погрузиться в по-настоящему захватывающий мир и попробовать на вкус кино, созданное с душой.
             </motion.div>
             <motion.img
-                src="/images/header.png"
+                src="/images/header.webp"
                 alt="header"
                 className={styles.image}
                 initial={{ opacity: 0, scale: 0.9 }}

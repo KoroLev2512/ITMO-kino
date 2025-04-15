@@ -35,15 +35,14 @@ export const Soon = () => {
                           rel="noopener noreferrer">
                         16:30
                     </Link>
-                    {/*<Link to='https://itmo.events/events/110111'*/}
-                    {/*      className={styles.registration_button}*/}
-                    {/*      target="_blank"*/}
-                    {/*      rel="noopener noreferrer">*/}
-                    {/*    19:00*/}
-                    {/*</Link>*/}
+                    <Link to='https://itmo.events/events/110111'
+                          className={styles.registration_button}
+                          target="_blank"
+                          rel="noopener noreferrer">
+                        19:00
+                    </Link>
                 </div>
             </motion.div>
-
             <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : {}}
@@ -51,7 +50,7 @@ export const Soon = () => {
                 className={styles.land}
             >
                 <motion.img
-                    src="/images/landing.svg"
+                    src="/images/landing.webp"
                     alt="header"
                 />
                 <div className={styles.tg}>
@@ -60,6 +59,13 @@ export const Soon = () => {
                         @cgitmo
                     </Link>
                 </div>
+                {/*<Link to='/movie/1'*/}
+                {/*      className={styles.registration_button}*/}
+                {/*      target="_blank"*/}
+                {/*      rel="noopener noreferrer"*/}
+                {/*>*/}
+                {/*    Выбор мест*/}
+                {/*</Link>*/}
             </motion.div>
         </motion.div>
     );
