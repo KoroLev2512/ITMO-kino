@@ -142,7 +142,7 @@ export const SessionPage = () => {
                             <div className={style.complete_popup_overlay}>
                                 <div className={style.complete_popup_content}>
                                     <button className={style.close_popup_button} onClick={handlePopupClose}>
-                                        <img src="/icons/close.webp" alt="close" />
+                                        <img src="/icons/close.webp" alt="close" className={style.close}/>
                                     </button>
                                     <p className={style.complete_popup_title}>Ждём на премьере</p>
                                     <p className={style.complete_popup_text}>
