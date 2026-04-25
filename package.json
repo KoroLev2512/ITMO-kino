@@ -21,7 +21,7 @@
     "build:prod": "webpack  --env mode=production",
     "build:dev": "webpack  --env mode=development",
     "build": "react-scripts build",
-    "postbuild": "react-snap",
+    "postbuild": "node scripts/react-snap-postbuild.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server": "npx json-server --watch db.json --port 3001 --host 127.0.0.1"
