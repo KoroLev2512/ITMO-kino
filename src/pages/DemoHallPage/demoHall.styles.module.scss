@@ -12,8 +12,35 @@
   white-space: normal;
 }
 
+// "Повернуть горизонтально" — phones only.
+.rotate {
+  display: none;
+}
+
 @media (max-width: 650px) {
   .note {
     font-size: 13px;
+  }
+
+  .rotate {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 4px auto 24px;
+    padding: 12px 22px;
+    border: 2px solid #FFF;
+    border-radius: 11px;
+    background: transparent;
+    color: #FFF;
+    font-family: "Muller Next Wide Trial ExtraBold", serif;
+    font-size: 14px;
+    font-weight: 750;
+    cursor: pointer;
+
+    &:active {
+      background: #FFF;
+      color: #000;
+    }
   }
 }

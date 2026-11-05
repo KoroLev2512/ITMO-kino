@@ -11,6 +11,11 @@ interface SeatsSelectProps {
     readOnly?: boolean
     /** Demo mode: called when a seat is clicked. */
     onReadOnlyClick?: (seat: ISeat) => void
+    /**
+     * Layout: `scroll` — on phones keep seats readable and let the parent scroll horizontally;
+     * `landscape` — size seats from --hall-w/--hall-h to fit a full-screen (rotated) view.
+     */
+    variant?: 'default' | 'scroll' | 'landscape'
 }
 
 interface ISeatWithId extends ISeat {
@@ -89,7 +94,7 @@ const generateSeats = (
 //     return groups
 // }
 
-export const SeatSelect = ({ buySeats, readOnly, onReadOnlyClick }: SeatsSelectProps) => {
+export const SeatSelect = ({ buySeats, readOnly, onReadOnlyClick, variant = 'default' }: SeatsSelectProps) => {
     const allSeats = generateSeats(buySeats, resetNumsForward, emptyCellsForward);
     const rowsCount = 14;
     const rows = Array.from({ length: rowsCount }, (_, i) => i + 1);
@@ -99,7 +104,10 @@ export const SeatSelect = ({ buySeats, readOnly, onReadOnlyClick }: SeatsSelectP
     // const reverseSeatsFlat = reverseRows.flat();
 
     return (
-        <div className={styles.seatsSelect}>
+        <div className={classNames(styles.seatsSelect, {
+            [styles.scroll]: variant === 'scroll',
+            [styles.landscape]: variant === 'landscape',
+        })}>
             <div className={styles.wrapper}>
                 <span>Экран</span>
                 <img src="/icons/screen.webp" alt="screen" className={styles.screen}/>

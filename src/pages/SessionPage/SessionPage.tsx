@@ -11,6 +11,7 @@ import {useUpdateSeatsByIdMutation} from '../../shared/api/order'
 import {OrderData} from '../../shared/types'
 import {useEffect, useRef, useState} from 'react'
 import {Table, TablePopup} from "../../shared/ui/Table";
+import {ServiceUnavailablePage} from '../ServiceUnavailablePage';
 
 import style from './session.styles.module.scss'
 
@@ -20,8 +21,8 @@ export const SessionPage = () => {
     const [isDisabled, setIsDisabled] = useState(false);
     const [qrCode, setQrCode] = useState('');
     const params = useParams();
-    const { isLoading, data: sessionData } = useGetSessionByIdQuery(params.sessionId!);
-    const { data: movieData } = useGetMovieByIdQuery(params.movieId!);
+    const { isLoading, isError: isSessionError, data: sessionData } = useGetSessionByIdQuery(params.sessionId!);
+    const { isError: isMovieError, data: movieData } = useGetMovieByIdQuery(params.movieId!);
     const [buyTicket, { isSuccess }] = useUpdateSeatsByIdMutation();
     const order = useSelector((state: RootState) => state.order);
     const price = 500;
@@ -58,6 +59,7 @@ export const SessionPage = () => {
     }, [qrCode]);
 
     if (isLoading) return <Title center>Загрузка свободных мест...</Title>;
+    if (isSessionError || isMovieError) return <ServiceUnavailablePage/>;
 
     const clearOrderInStore = () => {
         dispatch(clearOrder());

@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { Text } from '../../shared/ui/Text';
 import { useGetMovieByIdQuery } from '../../shared/api';
 import { SessionTime } from '../../widgets/SessionTime';
+import { ServiceUnavailablePage } from '../ServiceUnavailablePage';
 import { Session } from '../../shared/types';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
@@ -16,7 +17,7 @@ export const MoviePage = () => {
     const [isAuthorized, setIsAuthorized] = useState(false);
     const [error, setError] = useState('');
     const params = useParams();
-    const { isLoading, data } = useGetMovieByIdQuery(params.id!);
+    const { isLoading, isError, data } = useGetMovieByIdQuery(params.id!);
 
     const correctPassword = 'kino-2512';
 
@@ -69,6 +70,7 @@ export const MoviePage = () => {
     }
 
     if (isLoading) return <h1>Загрузка...</h1>;
+    if (isError) return <ServiceUnavailablePage/>;
     if (!data) return (
         <div className={style.error}>
             <Text center className={style.title}>Фильм не найден</Text>

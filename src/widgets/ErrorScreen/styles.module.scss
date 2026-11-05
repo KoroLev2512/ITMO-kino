@@ -1,0 +1,172 @@
+// Error pages (404 / 503): landing typography and buttons, glasses mascot as the middle digit,
+// red cinema chairs along the bottom like the hall pages.
+$peach: #FFD3AA;
+
+.ErrorScreen {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100dvh;
+  padding: 32px 16px 0;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 50% 35%, rgba(255, 211, 170, 0.12), transparent 60%), #000;
+  box-sizing: border-box;
+}
+
+.logo img {
+  display: block;
+  width: 200px;
+  max-width: 50vw;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 720px;
+  padding: 32px 0 calc(clamp(70px, 14vw, 170px) + 24px);
+  text-align: center;
+}
+
+.code {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(4px, 1vw, 12px);
+  margin: 0;
+  color: #FFF;
+  font-family: "Muller Next Wide Trial ExtraBold", serif;
+  font-size: clamp(110px, 22vw, 240px);
+  font-weight: 750;
+  line-height: 1;
+  user-select: none;
+}
+
+.mascot {
+  height: 1.05em;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(3deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mascot {
+    animation: none;
+  }
+}
+
+.title {
+  margin: 24px 0 16px;
+  color: #FFF;
+  font-family: "Muller Next Wide Trial ExtraBold", serif;
+  font-size: clamp(28px, 5vw, 52px);
+  font-weight: 750;
+  line-height: 1.05;
+
+  em {
+    font-style: normal;
+    color: $peach;
+  }
+}
+
+.text {
+  max-width: 560px;
+  margin: 0;
+  color: #BABABA;
+  font-family: Muller, serif;
+  font-size: clamp(15px, 2vw, 19px);
+  line-height: 1.45;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 36px;
+}
+
+%button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 200px;
+  padding: 14px 32px;
+  border-radius: 11px;
+  font-family: "Muller Next Wide Trial ExtraBold", serif;
+  font-size: 16px;
+  font-weight: 750;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.primary {
+  @extend %button;
+  border: 3px solid $peach;
+  background: $peach;
+  color: #000;
+
+  &:hover {
+    background: #000;
+    color: $peach;
+  }
+}
+
+.secondary {
+  @extend %button;
+  border: 3px solid #FFF;
+  background: transparent;
+  color: #FFF;
+
+  &:hover {
+    background: #FFF;
+    color: #000;
+  }
+}
+
+@media (hover: none) {
+  .primary:hover {
+    background: $peach;
+    color: #000;
+  }
+
+  .secondary:hover {
+    background: transparent;
+    color: #FFF;
+  }
+}
+
+.chairs {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: clamp(70px, 14vw, 170px);
+  background: url("../../../public/images/chairs-bg-red.webp") bottom center / cover no-repeat;
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+@media (max-width: 480px) {
+  .actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .primary, .secondary {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}

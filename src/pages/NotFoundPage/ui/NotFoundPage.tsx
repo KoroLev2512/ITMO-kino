@@ -1,20 +1,13 @@
-import classNames from 'classnames';
-import {Text} from "../../../shared/ui/Text";
-import {Link} from "react-router-dom";
+import { ErrorScreen } from '../../../widgets/ErrorScreen'
 
-import styles from './NotFoundPage.module.scss';
-
-import style from "../../MoviePage/movie.styles.module.scss";
-
-interface NotFoundPageProps {
-    className?: string;
-}
-
-export const NotFoundPage = ({className}: NotFoundPageProps) => {
-    return (
-        <div className={classNames(styles.NotFoundPage, {}, [className])}>
-            <Text center className={style.title}>Страница не найдена</Text>
-            <Link to={'/'}><button className={styles.errorButton}>На главную</button></Link>
-        </div>
-    );
-};
+export const NotFoundPage = () => (
+    <ErrorScreen
+        code="404"
+        title={<>Этот зал <em>пуст</em></>}
+        text="Такой страницы в нашем кинотеатре нет: возможно, сеанс перенесли или в ссылке опечатка."
+        actions={[
+            { label: 'На главную', to: '/' },
+            { label: 'Схема зала', to: '/demo/hall', variant: 'secondary' },
+        ]}
+    />
+)

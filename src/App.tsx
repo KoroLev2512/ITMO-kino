@@ -6,6 +6,7 @@ import {SessionPage} from "./pages/SessionPage";
 import {RegistrationPage} from "./pages/RegistrationPage";
 import {NotFoundPage} from "./pages/NotFoundPage";
 import {DemoHallPage} from "./pages/DemoHallPage";
+import {ServiceUnavailablePage} from "./pages/ServiceUnavailablePage";
 import {Provider} from "react-redux";
 import {store} from "./shared/store";
 import {HelmetProvider} from "react-helmet-async";
@@ -21,6 +22,7 @@ const router = createBrowserRouter(
         {path: "/movie/:movieId/sessions/:sessionId", element: <><Seo title="Выбор мест" noindex/><SessionPage/></>},
         {path: "/movie/:movieId/registration/", element: <><Seo title="Регистрация" noindex/><RegistrationPage/></>},
         {path: "/demo/hall", element: <><Seo title="Схема зала — демо"/><DemoHallPage/></>},
+        {path: "/503", element: <><Seo title="503 — технический перерыв" noindex/><ServiceUnavailablePage/></>},
         {path: "/*", element: <><Seo title="404 — страница не найдена" noindex/><NotFoundPage/></>},
     ],
     {

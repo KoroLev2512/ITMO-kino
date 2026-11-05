@@ -212,3 +212,54 @@
     margin-top: 10px;
   }
 }
+
+// ---- Layout variants (demo hall) ----
+// Fixed-size variants:
+// - the screen spans the seats but doesn't size the hall (the 2191px-wide image would
+//   otherwise inflate max-content width);
+// - rows 7+ shift down by exactly one seat row (the aisle) via transform, so the label
+//   keeps its track height (margin-top would collapse it to 0 and misalign the text).
+@mixin fixed-size {
+  .wrapper {
+    width: 0;
+    min-width: 100%;
+    max-width: none;
+  }
+
+  .screen {
+    width: 100%;
+  }
+
+  .row {
+    font-size: 12px;
+  }
+
+  .marginTop {
+    margin-top: 0;
+    transform: translateY(calc(var(--size) + var(--gap)));
+  }
+}
+
+// Phones: readable seats; the parent (HallScroller) scrolls horizontally.
+@media (max-width: 650px) {
+  .seatsSelect.scroll {
+    @include fixed-size;
+    --size: 22px;
+    --gap: 2px;
+    display: grid;
+    width: max-content;
+    margin: 0;
+    padding: 0 16px;
+  }
+}
+
+// Full-screen hall: seats sized to fit both axes of the view (--hall-w x --hall-h set by the parent).
+.seatsSelect.landscape {
+  @include fixed-size;
+  --size: min(calc((var(--hall-w) - 110px) / 37), calc((var(--hall-h) - 120px) / 16.5));
+  --gap: 2px;
+  display: grid;
+  width: max-content;
+  margin: 0 auto;
+  gap: 12px;
+}

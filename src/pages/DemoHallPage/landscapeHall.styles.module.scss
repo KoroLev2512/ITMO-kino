@@ -1,0 +1,54 @@
+// Portrait phone: a box of 100dvh x 100dvw rotated 90° to cover the screen sideways.
+// --hall-w / --hall-h describe the box's own (rotated) width and height for seat sizing.
+.LandscapeHall {
+  --hall-w: 100dvh;
+  --hall-h: 100dvw;
+
+  position: fixed;
+  top: 0;
+  left: 100dvw;
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100dvh;
+  height: 100dvw;
+  background: #000;
+  transform: rotate(90deg);
+  transform-origin: top left;
+  overflow: hidden;
+}
+
+@media (orientation: landscape) {
+  .LandscapeHall {
+    --hall-w: 100dvw;
+    --hall-h: 100dvh;
+
+    left: 0;
+    width: 100dvw;
+    height: 100dvh;
+    transform: none;
+  }
+}
+
+.stage {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 1;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+
+  img {
+    display: block;
+    width: 36px;
+  }
+}

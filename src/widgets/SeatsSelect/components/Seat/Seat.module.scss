@@ -44,21 +44,24 @@
     color: #8a8a8a;
   }
 
-  &:hover::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    bottom: calc(100% + 6px);
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10;
-    padding: 6px 10px;
-    border-radius: 8px;
-    background: rgba(0, 0, 0, 0.85);
-    color: #fff;
-    font-size: 13px;
-    font-weight: 500;
-    line-height: 1.2;
-    white-space: nowrap;
-    pointer-events: none;
+  // Tooltip only with a real pointer: on touch screens a tap leaves :hover stuck.
+  @media (hover: hover) {
+    &:hover::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: calc(100% + 6px);
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      padding: 6px 10px;
+      border-radius: 8px;
+      background: rgba(0, 0, 0, 0.85);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.2;
+      white-space: nowrap;
+      pointer-events: none;
+    }
   }
 }
