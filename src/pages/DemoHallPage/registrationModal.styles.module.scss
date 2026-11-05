@@ -43,6 +43,30 @@
   font-weight: 750;
 }
 
+.seat {
+  display: none;
+  margin: -8px 0 16px;
+  color: #FF292B;
+  font-family: "Muller Next Wide Trial ExtraBold", serif;
+  font-size: 16px;
+  font-weight: 750;
+}
+
+.seatTitle {
+  margin: 0;
+  color: #FF292B;
+  font-family: "Muller Next Wide Trial ExtraBold", serif;
+  font-size: 24px;
+  font-weight: 750;
+}
+
+// Touch devices have no hover tooltip, so the tapped seat is shown in the modal instead.
+@media (hover: none) {
+  .seat {
+    display: block;
+  }
+}
+
 .text {
   margin: 0 0 24px;
   color: #808080;

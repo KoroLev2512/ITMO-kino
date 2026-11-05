@@ -1,6 +1,7 @@
 import { useCallback, useState } from 'react'
 import { Header } from '../../widgets/Header'
 import { SeatSelect } from '../../widgets/SeatsSelect'
+import { Seat } from '../../shared/types'
 import { RegistrationModal } from './RegistrationModal'
 import { HallScroller } from './HallScroller'
 import { LandscapeHall } from './LandscapeHall'
@@ -27,6 +28,15 @@ const saveRegistered = () => {
     }
 }
 
+// Touch-only devices have no hover tooltip, so they always get the modal to see the seat.
+const isTouchOnly = () => {
+    try {
+        return window.matchMedia('(hover: none)').matches
+    } catch {
+        return false
+    }
+}
+
 const RotateIcon = () => (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <rect x="3" y="8" width="18" height="11" rx="2" stroke="currentColor" strokeWidth="2"/>
@@ -37,24 +47,29 @@ const RotateIcon = () => (
 
 export const DemoHallPage = () => {
     const [registered, setRegistered] = useState(readRegistered)
-    const [isModalOpen, setIsModalOpen] = useState(false)
+    const [selectedSeat, setSelectedSeat] = useState<Seat | null>(null)
     const [isLandscape, setIsLandscape] = useState(false)
 
-    const onSeatClick = useCallback(() => {
-        if (!registered) setIsModalOpen(true)
+    const onSeatClick = useCallback((seat: Seat) => {
+        if (!registered || isTouchOnly()) setSelectedSeat(seat)
     }, [registered])
 
-    const closeModal = useCallback(() => setIsModalOpen(false), [])
+    const closeModal = useCallback(() => setSelectedSeat(null), [])
     const closeLandscape = useCallback(() => setIsLandscape(false), [])
 
     const markRegistered = useCallback(() => {
         saveRegistered()
         setRegistered(true)
-        setIsModalOpen(false)
+        setSelectedSeat(null)
     }, [])
 
-    const modal = isModalOpen && (
-        <RegistrationModal onClose={closeModal} onAlreadyRegistered={markRegistered}/>
+    const modal = selectedSeat && (
+        <RegistrationModal
+            seat={selectedSeat}
+            registered={registered}
+            onClose={closeModal}
+            onAlreadyRegistered={markRegistered}
+        />
     )
 
     return (
