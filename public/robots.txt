@@ -1,4 +1,4 @@
 User-agent: *
-Disallow: /private/
 Allow: /
-Sitemap: https://itmokino.ru/sitemap.xml
+
+Sitemap: https://itmo-kino-landing.vercel.app/sitemap.xml

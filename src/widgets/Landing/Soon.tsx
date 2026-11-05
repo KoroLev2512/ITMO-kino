@@ -20,7 +20,7 @@ export const Soon = () => {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 1, delay: 0.2 }}
             >
-                <Title className={styles.soon}>Выбирайте сеанс <span className={styles.highlightMargin}> и регистрируйтесь</span></Title>
+                <Title as="h2" className={styles.soon}>Выбирайте сеанс <span className={styles.highlightMargin}> и регистрируйтесь</span></Title>
             </motion.div>
 
             <motion.div
@@ -42,6 +42,9 @@ export const Soon = () => {
                         19:00
                     </Link>
                 </div>
+                <Link to='/demo/hall' className={styles.demo_button}>
+                    Посмотреть схему зала
+                </Link>
             </motion.div>
             <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -51,7 +54,7 @@ export const Soon = () => {
             >
                 <motion.img
                     src="/images/landing.webp"
-                    alt="header"
+                    alt="Зрительный зал ИТМО КИНО"
                 />
                 <div className={styles.tg}>
                     следите за нами в tg:

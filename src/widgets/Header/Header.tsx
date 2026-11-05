@@ -6,14 +6,15 @@ import style from './styles.module.scss'
 interface HeaderProps {
     title: string
     onClick?: () => void
+    backTo?: string
 }
 
 export const Header = (props: HeaderProps) => {
-    const { title, onClick } = props
+    const { title, onClick, backTo = '/movie/1' } = props
 
     return (
         <div className={style.Header}>
-            <Link to='/movie/1' className={classNames('hover', style.backBtn)} onClick={onClick}>
+            <Link to={backTo} className={classNames('hover', style.backBtn)} onClick={onClick}>
                 <img
                     src="/icons/arrow-icon.webp"
                     alt="arrow"

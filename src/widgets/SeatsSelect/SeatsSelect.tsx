@@ -7,6 +7,8 @@ type BuySeats = ISeat[] | undefined
 
 interface SeatsSelectProps {
     buySeats: BuySeats
+    /** Demo mode: seats are hoverable but not selectable. */
+    readOnly?: boolean
 }
 
 interface ISeatWithId extends ISeat {
@@ -85,7 +87,7 @@ const generateSeats = (
 //     return groups
 // }
 
-export const SeatSelect = ({ buySeats }: SeatsSelectProps) => {
+export const SeatSelect = ({ buySeats, readOnly }: SeatsSelectProps) => {
     const allSeats = generateSeats(buySeats, resetNumsForward, emptyCellsForward);
     const rowsCount = 14;
     const rows = Array.from({ length: rowsCount }, (_, i) => i + 1);
@@ -117,6 +119,7 @@ export const SeatSelect = ({ buySeats }: SeatsSelectProps) => {
                             <Seat
                                 key={`seat-${seat.id}`}
                                 data={seat}
+                                readOnly={readOnly}
                             />
                         ) : (
                             <div key={`empty-${idx}`} className={styles.emptySeat} />
@@ -124,20 +127,23 @@ export const SeatSelect = ({ buySeats }: SeatsSelectProps) => {
                     )}
                 </div>
             </div>
-            <div className={styles.info}>
-                <div className={classNames(styles.infoItem, styles.available)}>
-                    <i className="ic-dot" />
-                    <span className={styles.text}>Свободно</span>
+            {/* Demo hall (readOnly) shows no legend: every seat is free and nothing can be selected. */}
+            {!readOnly && (
+                <div className={styles.info}>
+                    <div className={classNames(styles.infoItem, styles.available)}>
+                        <i className="ic-dot" />
+                        <span className={styles.text}>Свободно</span>
+                    </div>
+                    <div className={classNames(styles.infoItem, styles.busy)}>
+                        <i className="ic-dot busy" />
+                        <span className={styles.text}>Занято</span>
+                    </div>
+                    <div className={classNames(styles.infoItem, styles.selected)}>
+                        <i className="ic-dot selected" />
+                        <span className={styles.text}>Выбрано</span>
+                    </div>
                 </div>
-                <div className={classNames(styles.infoItem, styles.busy)}>
-                    <i className="ic-dot busy" />
-                    <span className={styles.text}>Занято</span>
-                </div>
-                <div className={classNames(styles.infoItem, styles.selected)}>
-                    <i className="ic-dot selected" />
-                    <span className={styles.text}>Выбрано</span>
-                </div>
-            </div>
+            )}
             {/*<div className={styles.place}>*/}
             {/*    <div className={styles.rows}>*/}
             {/*        {Array.from({ length: rowsCount }, (_, i) => rowsCount - i).map(r => (*/}

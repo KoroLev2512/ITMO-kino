@@ -28,7 +28,7 @@ export const Head: React.FC<HeadProps> = ({ soonRef }) => {
                 <motion.img
                     className={styles.itmo}
                     src="/images/itmo.webp"
-                    alt="logo"
+                    alt="Университет ИТМО"
                     initial={{ opacity: 0, y: -20 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 1, delay: 0.2 }}
@@ -36,7 +36,7 @@ export const Head: React.FC<HeadProps> = ({ soonRef }) => {
                 <motion.img
                     className={styles.logo}
                     src="/icons/logo_horizontal.webp"
-                    alt="logo"
+                    alt="ИТМО КИНО"
                     initial={{ opacity: 0, y: -20 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 1, delay: 0.2 }}
@@ -66,7 +66,7 @@ export const Head: React.FC<HeadProps> = ({ soonRef }) => {
             </motion.div>
             <motion.img
                 src="/images/header.webp"
-                alt="header"
+                alt="Кадр из фильмов ИТМО КИНО"
                 className={styles.image}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : {}}

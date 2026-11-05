@@ -11,15 +11,25 @@ interface SeatProps {
     status: string
   }
   className?: string
+  /** Demo mode: hover shows seat info, clicks do nothing and never touch the order store. */
+  readOnly?: boolean
 }
 
-export const Seat = ({ data }: SeatProps, className:string) => {
+const statusLabel: Record<string, string> = {
+  available: 'свободно',
+  busy: 'занято',
+  selected: 'выбрано',
+}
+
+export const Seat = ({ data, className, readOnly }: SeatProps) => {
   const { row, seat, status: initStatus } = data
   const [status, setStatus] = useState(initStatus);
-  const classes = classNames(style.Seat, style[status], className)
+  const classes = classNames(style.Seat, style[status], { [style.readOnly]: readOnly }, className)
   const dispatch = useDispatch()
+  const tooltip = `Ряд ${row}, место ${seat} — ${statusLabel[status] ?? status}`
 
   const onClick = () => {
+    if (readOnly) return
     if (initStatus !== 'busy') {
       const isSelected = status === 'available'
       const newStatus = isSelected ? 'selected' : 'available'
@@ -34,7 +44,13 @@ export const Seat = ({ data }: SeatProps, className:string) => {
   }
 
   return (
-    <div className={classes} onClick={onClick}>
+    <div
+      className={classes}
+      onClick={readOnly ? undefined : onClick}
+      data-tooltip={readOnly ? tooltip : undefined}
+      aria-label={tooltip}
+      aria-disabled={readOnly || undefined}
+    >
       <i className='ic-seat' />
       <span className={style.seatNum}>{seat}</span>
     </div>

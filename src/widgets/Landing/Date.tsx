@@ -1,7 +1,12 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import classNames from 'classnames';
 import { Title } from "../../shared/ui/Title";
 import styles from "./styles.module.scss";
+
+const MAP_URL = `https://yandex.ru/maps/?text=${encodeURIComponent(
+    'Санкт-Петербург, площадь Александра Невского, 2, гостиница Москва'
+)}`;
 
 export const Date = () => {
     const ref = useRef(null);
@@ -20,7 +25,7 @@ export const Date = () => {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 1, delay: 0.2 }}
             >
-                <Title className={styles.title}>Расписание</Title>
+                <Title as="h2" className={styles.title}>Расписание</Title>
             </motion.div>
 
             <motion.div
@@ -71,12 +76,20 @@ export const Date = () => {
                 transition={{ duration: 1, delay: 1.4 }}
             >
                 <h3 className={styles.place_title}>Место</h3>
-                <div className={styles.place_value}>Кинотеатр отеля «Москва»<br/>пл. Александра Невского 2</div>
+                <div className={styles.place_value}>Кинотеатр отеля «Москва»<br/>пл. Александра Невского{'\u00A0'}2</div>
+                <a
+                    href={MAP_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={classNames(styles.card_button, styles.map_button)}
+                >
+                    На карте
+                </a>
             </motion.div>
 
             <motion.img
                 src="/images/glasses.webp"
-                alt="header"
+                alt="" aria-hidden="true"
                 className={styles.k}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : {}}

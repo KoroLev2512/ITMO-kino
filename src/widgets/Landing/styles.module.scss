@@ -80,6 +80,8 @@
 .tg_link {
   cursor: pointer;
   color: #A8A8A8;
+  text-decoration: underline;
+  text-underline-offset: 4px;
   padding-bottom: 5dvh;
 }
 
@@ -142,6 +144,7 @@
 }
 
 .card_title {
+  margin: 0;
   color: #FFF;
   font-feature-settings: 'liga' off, 'clig' off;
   font-family: "Muller Next Wide Trial ExtraBold", serif;
@@ -223,6 +226,12 @@
       }
     }
   }
+}
+
+// "На карте" under the address: card_button look, but sized to content.
+.map_button {
+  display: inline-flex;
+  margin-top: 20px;
 }
 
 .hidden_button {
@@ -331,6 +340,24 @@
   margin: 0 auto;
   gap: var(--margin);
   max-width: 50dvw;
+}
+
+.demo_button {
+  display: table;
+  margin: 20px auto 0;
+  padding: 12px 24px;
+  color: #FFF;
+  font-family: "Muller Next Wide Trial ExtraBold", serif;
+  font-size: 15px;
+  font-weight: 750;
+  border: 2px solid #FFF;
+  border-radius: 11px;
+  transition: background 0.2s, color 0.2s;
+
+  &:hover {
+    background: #FFF;
+    color: #000;
+  }
 }
 
 .registration_button {

@@ -1,11 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>ИТМО кино</title>
+    <meta name="theme-color" content="#000000" />
+
+    <title>ИТМО КИНО — показ студенческих фильмов ИТМО</title>
+    <meta name="description" content="Мы сделали кино в ИТМО и приглашаем вас его посмотреть. Три короткометражных фильма студентов ИТМО: «Птичка», «Вкус» и «В темноте» — показ в кинотеатре отеля «Москва»." />
+    <link rel="canonical" href="%REACT_APP_SITE_URL%/" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ИТМО КИНО" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:url" content="%REACT_APP_SITE_URL%/" />
+    <meta property="og:title" content="ИТМО КИНО — мы сделали кино и приглашаем вас его посмотреть" />
+    <meta property="og:description" content="Три короткометражных фильма студентов ИТМО: «Птичка», «Вкус» и «В темноте». Показ в кинотеатре отеля «Москва» на площади Александра Невского." />
+    <meta property="og:image" content="%REACT_APP_SITE_URL%/og-image.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Логотип ИТМО КИНО" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ИТМО КИНО — мы сделали кино и приглашаем вас его посмотреть" />
+    <meta name="twitter:description" content="Три короткометражных фильма студентов ИТМО: «Птичка», «Вкус» и «В темноте»." />
+    <meta name="twitter:image" content="%REACT_APP_SITE_URL%/og-image.jpg" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "%REACT_APP_SITE_URL%/#organization",
+            "name": "ИТМО КИНО",
+            "url": "%REACT_APP_SITE_URL%/",
+            "logo": "%REACT_APP_SITE_URL%/icons/logo_horizontal.webp",
+            "sameAs": ["https://t.me/cgitmo"]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "%REACT_APP_SITE_URL%/#website",
+            "name": "ИТМО КИНО",
+            "url": "%REACT_APP_SITE_URL%/",
+            "inLanguage": "ru-RU",
+            "publisher": { "@id": "%REACT_APP_SITE_URL%/#organization" }
+          },
+          {
+            "@type": "ScreeningEvent",
+            "name": "ИТМО КИНО: премьерный показ студенческих фильмов",
+            "description": "Показ трёх короткометражных фильмов студентов ИТМО: «Птичка», «Вкус» и «В темноте».",
+            "startDate": "2025-03-28T16:30:00+03:00",
+            "eventStatus": "https://schema.org/EventScheduled",
+            "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+            "image": "%REACT_APP_SITE_URL%/og-image.jpg",
+            "inLanguage": "ru",
+            "organizer": { "@id": "%REACT_APP_SITE_URL%/#organization" },
+            "location": {
+              "@type": "MovieTheater",
+              "name": "Кинотеатр отеля «Москва»",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "пл. Александра Невского, 2",
+                "addressLocality": "Санкт-Петербург",
+                "addressCountry": "RU"
+              }
+            },
+            "workPresented": [
+              { "@type": "Movie", "name": "Птичка", "director": { "@type": "Person", "name": "Арсений Колесник" } },
+              { "@type": "Movie", "name": "Вкус", "director": { "@type": "Person", "name": "Игорь Гомжин" } },
+              { "@type": "Movie", "name": "В темноте", "director": { "@type": "Person", "name": "Владислав Шиль" } }
+            ]
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
+    <noscript>
+      <h1>ИТМО КИНО — мы сделали кино и приглашаем вас его посмотреть</h1>
+      <p>Первый показ короткометражных фильмов студентов ИТМО в кинотеатре отеля «Москва» (пл. Александра Невского, 2).</p>
+      <ul>
+        <li>«Птичка» — режиссёр Арсений Колесник</li>
+        <li>«Вкус» — режиссёр Игорь Гомжин</li>
+        <li>«В темноте» — режиссёр Владислав Шиль</li>
+      </ul>
+      <p>Следите за нами в Telegram: <a href="https://t.me/cgitmo">@cgitmo</a></p>
+    </noscript>
     <div id="root"></div>
   </body>
 </html>

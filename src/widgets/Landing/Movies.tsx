@@ -48,7 +48,7 @@ export const Movies = () => {
                 >
                     <motion.img
                         src={movie.img}
-                        alt={movie.title}
+                        alt={`Кадр из фильма «${movie.title}»`}
                         className={styles.card_image}
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={isInView ? { opacity: 1, scale: 1 } : {}}
@@ -60,11 +60,11 @@ export const Movies = () => {
                         animate={isInView ? { opacity: 1, x: 0 } : {}}
                         transition={{ duration: 1, delay: 0.5 }}
                     >
-                        <div className={styles.card_title}>{movie.title}</div>
+                        <h3 className={styles.card_title}>{movie.title}</h3>
                         <div className={styles.card_description}>{movie.description}</div>
                         <div className={styles.card_director}>Режиссер: <span className={styles.director_name}>{movie.director}</span></div>
                         {movie.link ? (
-                            <Link to={movie.link}>
+                            <Link to={movie.link} target="_blank" rel="noopener noreferrer" aria-label={`Тизер фильма «${movie.title}»`}>
                                 <motion.button
                                     className={styles.card_button}
                                     initial={{ opacity: 0, scale: 0.8 }}

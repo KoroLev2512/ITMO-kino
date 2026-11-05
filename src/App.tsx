@@ -5,18 +5,23 @@ import {MoviePage} from "./pages/MoviePage";
 import {SessionPage} from "./pages/SessionPage";
 import {RegistrationPage} from "./pages/RegistrationPage";
 import {NotFoundPage} from "./pages/NotFoundPage";
+import {DemoHallPage} from "./pages/DemoHallPage";
 import {Provider} from "react-redux";
 import {store} from "./shared/store";
-import {Helmet, HelmetProvider} from "react-helmet-async";
+import {HelmetProvider} from "react-helmet-async";
+import {Seo} from "./shared/ui/Seo";
 import React, {useEffect} from "react";
 
+// Default meta / OG / JSON-LD live in public/index.html; routes only override title and robots.
+// Password-gated booking pages and 404 are kept out of the index.
 const router = createBrowserRouter(
     [
-        {path: "/", element: <HomePage/>},
-        {path: "/movie/:id", element: <MoviePage/>},
-        {path: "/movie/:movieId/sessions/:sessionId", element: <SessionPage/>},
-        {path: "/movie/:movieId/registration/", element: <RegistrationPage/>},
-        {path: "/*", element: <NotFoundPage/>},
+        {path: "/", element: <><Seo/><HomePage/></>},
+        {path: "/movie/:id", element: <><Seo title="Выбор сеанса" noindex/><MoviePage/></>},
+        {path: "/movie/:movieId/sessions/:sessionId", element: <><Seo title="Выбор мест" noindex/><SessionPage/></>},
+        {path: "/movie/:movieId/registration/", element: <><Seo title="Регистрация" noindex/><RegistrationPage/></>},
+        {path: "/demo/hall", element: <><Seo title="Схема зала — демо"/><DemoHallPage/></>},
+        {path: "/*", element: <><Seo title="404 — страница не найдена" noindex/><NotFoundPage/></>},
     ],
     {
         future: {
@@ -31,18 +36,6 @@ export const App = () => {
     }, []);
     return (
         <HelmetProvider>
-            <Helmet>
-                <title>ITMO KINO</title>
-                <meta name="description" content="Мы сделали кино в ИТМО и приглашаем вас его посмотреть"/>
-                <meta name="keywords"
-                      content="ИТМО, кино, показ, студенты, студенческая жизнь, актив, творчество, тизеры, кинопоказ, кинотеатр"/>
-                <meta name="author" content="Yurii Korolev"/>
-                <meta property="og:title" content="ИТМО КИНО"/>
-                <meta property="og:description" content="Мы сделали кино в ИТМО и приглашаем вас его посмотреть"/>
-                <meta property="og:type" content="website"/>
-                <meta property="og:url" content="https://itmokino.ru"/>
-                <meta property="og:image" content="https://itmokino.ru/itmokino-metadata.webp"/>
-            </Helmet>
             <Provider store={store}>
                 <div className={style.App}>
                     <RouterProvider router={router}/>
