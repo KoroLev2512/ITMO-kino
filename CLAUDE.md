@@ -7,7 +7,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ITMO KINO: a cinema-tickets site for a student film screening at ITMO. It's a Create React App (react-scripts 5) SPA in TypeScript with SCSS modules, Redux Toolkit + RTK Query, and React Router v7. UI text and content are in Russian.
 
 - Production: https://itmokino.ru (backend API: `https://api.itmokino.ru/`)
-- Vercel landing deployment: https://itmo-kino-landing.vercel.app/
+- Vercel landing deployment: https://itmokino.vercel.app/
 - Repo: `git@github.com:KoroLev2512/ITMO-kino.git`. The git root is this directory, not the parent `itmokino/` folder.
 
 ## Commands
@@ -44,7 +44,7 @@ Feature-sliced-style layout under `src/`:
   - `/movie/:id` → `MoviePage`. It is gated by a client-side password check hardcoded in the component, then lists sessions.
   - `/movie/:movieId/sessions/:sessionId` → `SessionPage`: hall scheme and seat selection (`widgets/SeatsSelect`).
   - `/movie/:movieId/registration/` → `RegistrationPage`: registration without seat selection.
-  - `/demo/hall` → `DemoHallPage`: a public demo of the hall linked from the landing. It needs no backend: every seat is shown as free. It renders `SeatSelect` with `readOnly`, so seats show a pointer cursor and a hover tooltip, ignore clicks and never touch the `order` store. Real booking is for cashiers only.
+  - `/demo/hall` → `DemoHallPage`: a public demo of the hall linked from the landing. It needs no backend: every seat is shown as free. It renders `SeatSelect` with `readOnly`, so seats show a pointer cursor and a "Ряд N, место M" hover tooltip and never touch the `order` store. A seat click opens `RegistrationModal`, which links to the itmo.events pages for each session (`shared/config/sessions.ts`, also used by the landing). "Я уже зарегистрировался" sets `localStorage['itmokino:registered']`, after which the modal stops appearing. Real booking is for cashiers only.
 - `widgets/`: composite UI (Header, Landing, MovieList, SeatsSelect, SessionTime, Title).
 - `shared/`: `api/` (RTK Query), `slices/` (Redux slices), `store/`, `types/`, `ui/` (Table, Text, Title primitives), `icons/`.
 

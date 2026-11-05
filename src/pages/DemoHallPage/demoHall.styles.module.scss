@@ -1,4 +1,5 @@
 .note {
+  box-sizing: border-box;
   max-width: 560px;
   margin: 0 auto;
   padding: 0 16px;
@@ -7,4 +8,12 @@
   font-size: 15px;
   line-height: 1.4;
   text-align: center;
+  // SessionPage's .content sets `white-space: nowrap` on mobile; let the note wrap.
+  white-space: normal;
+}
+
+@media (max-width: 650px) {
+  .note {
+    font-size: 13px;
+  }
 }

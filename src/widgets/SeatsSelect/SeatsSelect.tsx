@@ -9,6 +9,8 @@ interface SeatsSelectProps {
     buySeats: BuySeats
     /** Demo mode: seats are hoverable but not selectable. */
     readOnly?: boolean
+    /** Demo mode: called when a seat is clicked. */
+    onReadOnlyClick?: (seat: ISeat) => void
 }
 
 interface ISeatWithId extends ISeat {
@@ -87,7 +89,7 @@ const generateSeats = (
 //     return groups
 // }
 
-export const SeatSelect = ({ buySeats, readOnly }: SeatsSelectProps) => {
+export const SeatSelect = ({ buySeats, readOnly, onReadOnlyClick }: SeatsSelectProps) => {
     const allSeats = generateSeats(buySeats, resetNumsForward, emptyCellsForward);
     const rowsCount = 14;
     const rows = Array.from({ length: rowsCount }, (_, i) => i + 1);
@@ -120,6 +122,7 @@ export const SeatSelect = ({ buySeats, readOnly }: SeatsSelectProps) => {
                                 key={`seat-${seat.id}`}
                                 data={seat}
                                 readOnly={readOnly}
+                                onReadOnlyClick={onReadOnlyClick}
                             />
                         ) : (
                             <div key={`empty-${idx}`} className={styles.emptySeat} />

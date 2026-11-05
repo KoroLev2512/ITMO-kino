@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Title } from "../../shared/ui/Title";
 import { Link } from "react-router-dom";
+import { REGISTRATION_SESSIONS } from "../../shared/config";
 import styles from "./styles.module.scss";
 
 export const Soon = () => {
@@ -29,18 +30,15 @@ export const Soon = () => {
                 transition={{ duration: 1, delay: 0.4 }}
             >
                 <div className={styles.buttons}>
-                    <Link to='https://itmo.events/events/108557'
-                          className={styles.registration_button}
-                          target="_blank"
-                          rel="noopener noreferrer">
-                        16:30
-                    </Link>
-                    <Link to='https://itmo.events/events/110111'
-                          className={styles.registration_button}
-                          target="_blank"
-                          rel="noopener noreferrer">
-                        19:00
-                    </Link>
+                    {REGISTRATION_SESSIONS.map(({ time, url }) => (
+                        <Link key={time}
+                              to={url}
+                              className={styles.registration_button}
+                              target="_blank"
+                              rel="noopener noreferrer">
+                            {time}
+                        </Link>
+                    ))}
                 </div>
                 <Link to='/demo/hall' className={styles.demo_button}>
                     Посмотреть схему зала

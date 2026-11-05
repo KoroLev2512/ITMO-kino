@@ -3,6 +3,7 @@ import style from './Seat.module.scss'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { addSeat, deleteSeat } from '../../../../shared/slices'
+import { Seat as ISeat } from '../../../../shared/types'
 
 interface SeatProps {
   data: {
@@ -11,8 +12,12 @@ interface SeatProps {
     status: string
   }
   className?: string
-  /** Demo mode: hover shows seat info, clicks do nothing and never touch the order store. */
+  /**
+   * Demo mode: hover shows "Ряд N, место M", the seat never changes state and never
+   * touches the order store. A click only calls `onReadOnlyClick`.
+   */
   readOnly?: boolean
+  onReadOnlyClick?: (seat: ISeat) => void
 }
 
 const statusLabel: Record<string, string> = {
@@ -21,15 +26,19 @@ const statusLabel: Record<string, string> = {
   selected: 'выбрано',
 }
 
-export const Seat = ({ data, className, readOnly }: SeatProps) => {
+export const Seat = ({ data, className, readOnly, onReadOnlyClick }: SeatProps) => {
   const { row, seat, status: initStatus } = data
   const [status, setStatus] = useState(initStatus);
   const classes = classNames(style.Seat, style[status], { [style.readOnly]: readOnly }, className)
   const dispatch = useDispatch()
-  const tooltip = `Ряд ${row}, место ${seat} — ${statusLabel[status] ?? status}`
+  const position = `Ряд ${row}, место ${seat}`
+  const label = readOnly ? position : `${position} — ${statusLabel[status] ?? status}`
 
   const onClick = () => {
-    if (readOnly) return
+    if (readOnly) {
+      onReadOnlyClick?.({ row, seat })
+      return
+    }
     if (initStatus !== 'busy') {
       const isSelected = status === 'available'
       const newStatus = isSelected ? 'selected' : 'available'
@@ -46,10 +55,9 @@ export const Seat = ({ data, className, readOnly }: SeatProps) => {
   return (
     <div
       className={classes}
-      onClick={readOnly ? undefined : onClick}
-      data-tooltip={readOnly ? tooltip : undefined}
-      aria-label={tooltip}
-      aria-disabled={readOnly || undefined}
+      onClick={onClick}
+      data-tooltip={readOnly ? label : undefined}
+      aria-label={label}
     >
       <i className='ic-seat' />
       <span className={style.seatNum}>{seat}</span>

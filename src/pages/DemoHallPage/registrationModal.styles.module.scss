@@ -1,0 +1,112 @@
+// Visual language follows the SessionPage completion popup and the landing registration buttons.
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  padding: 40px 28px 28px;
+  border-radius: 16px;
+  background: #FFF;
+  text-align: center;
+}
+
+.close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  img {
+    display: block;
+    width: 40px;
+  }
+}
+
+.title {
+  margin: 0 0 8px;
+  color: #000;
+  font-family: "Muller Next Wide Trial ExtraBold", serif;
+  font-size: 26px;
+  font-weight: 750;
+}
+
+.seat {
+  margin: 0 0 16px;
+  color: #FF292B;
+  font-family: "Muller Next Wide Trial ExtraBold", serif;
+  font-size: 16px;
+  font-weight: 750;
+}
+
+.text {
+  margin: 0 0 24px;
+  color: #808080;
+  font-family: Muller, serif;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.times {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.time {
+  padding: 16px 0;
+  border-radius: 11px;
+  background: #FFD3AA;
+  color: #000;
+  font-family: "Muller Next Wide Trial ExtraBold", serif;
+  font-size: 18px;
+  font-weight: 750;
+  transition: background 0.2s;
+
+  &:hover {
+    background: #FFC287;
+  }
+}
+
+.registered {
+  margin-top: 20px;
+  padding: 8px;
+  border: none;
+  background: none;
+  color: #808080;
+  font-family: Muller, serif;
+  font-size: 15px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  cursor: pointer;
+
+  &:hover {
+    color: #000;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding: 36px 20px 20px;
+  }
+
+  .title {
+    font-size: 21px;
+  }
+
+  .text {
+    font-size: 14px;
+  }
+}
