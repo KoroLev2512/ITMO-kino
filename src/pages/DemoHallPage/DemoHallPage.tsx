@@ -1,7 +1,6 @@
 import { useCallback, useState } from 'react'
 import { Header } from '../../widgets/Header'
 import { SeatSelect } from '../../widgets/SeatsSelect'
-import { Seat } from '../../shared/types'
 import { RegistrationModal } from './RegistrationModal'
 
 import sessionStyle from '../SessionPage/session.styles.module.scss'
@@ -28,18 +27,18 @@ const saveRegistered = () => {
 
 export const DemoHallPage = () => {
     const [registered, setRegistered] = useState(readRegistered)
-    const [selectedSeat, setSelectedSeat] = useState<Seat | null>(null)
+    const [isModalOpen, setIsModalOpen] = useState(false)
 
-    const onSeatClick = useCallback((seat: Seat) => {
-        if (!registered) setSelectedSeat(seat)
+    const onSeatClick = useCallback(() => {
+        if (!registered) setIsModalOpen(true)
     }, [registered])
 
-    const closeModal = useCallback(() => setSelectedSeat(null), [])
+    const closeModal = useCallback(() => setIsModalOpen(false), [])
 
     const markRegistered = useCallback(() => {
         saveRegistered()
         setRegistered(true)
-        setSelectedSeat(null)
+        setIsModalOpen(false)
     }, [])
 
     return (
@@ -56,9 +55,8 @@ export const DemoHallPage = () => {
                     <SeatSelect buySeats={[]} readOnly onReadOnlyClick={onSeatClick}/>
                 </div>
             </div>
-            {selectedSeat && (
+            {isModalOpen && (
                 <RegistrationModal
-                    seat={selectedSeat}
                     onClose={closeModal}
                     onAlreadyRegistered={markRegistered}
                 />

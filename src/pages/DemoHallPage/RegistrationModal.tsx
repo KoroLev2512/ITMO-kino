@@ -1,17 +1,15 @@
 import { useEffect } from 'react'
 import { REGISTRATION_SESSIONS } from '../../shared/config'
-import { Seat } from '../../shared/types'
 
 import style from './registrationModal.styles.module.scss'
 
 interface RegistrationModalProps {
-    seat: Seat
     onClose: () => void
     /** "Я уже зарегистрировался": close and never show the modal again. */
     onAlreadyRegistered: () => void
 }
 
-export const RegistrationModal = ({ seat, onClose, onAlreadyRegistered }: RegistrationModalProps) => {
+export const RegistrationModal = ({ onClose, onAlreadyRegistered }: RegistrationModalProps) => {
     useEffect(() => {
         const onKeyDown = (e: KeyboardEvent) => {
             if (e.key === 'Escape') onClose()
@@ -33,7 +31,6 @@ export const RegistrationModal = ({ seat, onClose, onAlreadyRegistered }: Regist
                     <img src="/icons/close.webp" alt=""/>
                 </button>
                 <p id="registration-modal-title" className={style.title}>Регистрация на показ</p>
-                <p className={style.seat}>Ряд {seat.row}, место {seat.seat}</p>
                 <p className={style.text}>
                     Выберите удобный сеанс и зарегистрируйтесь. Место выберете у кассира перед показом.
                 </p>
